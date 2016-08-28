@@ -1,0 +1,82 @@
+// General styling
+.post {
+	margin-bottom: $gap-big;
+	.entry-title {
+		a {
+			letter-spacing: 3px;
+		}
+	}
+	.entry-meta {
+		text-transform: uppercase;
+		font-family: $font-family-sans-serif;
+	    line-height: 2.2;
+	}
+	.author {
+		display: inline-block;
+	}
+	.separator {
+		margin: 0 10px;
+	}
+	.post-categories {
+		display: inline;
+		padding: 0;
+		li {
+			display: inline-block;
+			@extend %category;
+		}
+	}
+	.read-more {
+		margin-top: 10px;
+	}
+}
+
+// Post list
+body:not(.single) .post {
+	padding: 20px;
+	padding-top: 0 !important;
+
+	.entry-title {
+		margin-top: 20px;
+		margin-bottom: 5px;
+	}
+
+	.entry-image {
+		margin-left: -20px;
+		margin-right: -20px;
+		img {
+			display:block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	header {
+		overflow: hidden;
+	}
+
+	.entry-summary {
+		margin-top: 10px;
+		img {
+			box-sizing: content-box;
+			float: left;
+			padding-right: 20px;
+		}
+		p {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+// Post detail
+body.single .post {
+	.single-content, .comments {
+		padding: 0 20px;
+		margin-bottom: 50px;
+	}
+	.entry-content {
+		margin-top: 30px;
+	}
+	footer {
+		margin-top: 50px;
+	}
+}

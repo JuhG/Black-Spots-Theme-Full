@@ -1,0 +1,115 @@
+a {
+	@extend %clearfix;
+}
+
+textarea:hover, 
+input:hover, 
+textarea:active, 
+input:active, 
+textarea:focus, 
+input:focus,
+button:focus,
+button:active,
+button:hover
+{
+	box-shadow: none !important;
+}
+
+img,
+figure,
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+ul {
+    -webkit-padding-start: 0;
+}
+
+li {
+	list-style: none;
+	line-height: 2;
+}
+
+.rte {
+	p {
+		line-height: 2;
+		margin-bottom: 40px;
+	}
+}
+
+.main {
+	margin-bottom: calc(2vw - -20px);
+}
+
+.btn, .btn a {
+	font-family: $font-family-sans-serif;
+}
+
+// Infinite scrolling
+
+.nav-previous {
+	@extend .btn;
+	@extend .btn-primary;
+	display: block;
+	max-width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.nav-next {
+	@extend .btn;
+	@extend .btn-primary;
+	display: block;
+	max-width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: calc(2vw - -20px);
+}
+
+.posts-navigation {
+	margin-bottom: 80px;
+}
+
+// Mailchimp
+.mch-widget {
+	background-color: #fff;
+	padding: 20px;
+}
+.mch-text {
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.mch-field, .mch-button {
+	input {
+		display: block;
+		width: 90%;
+		margin: 10px auto;
+	}
+}
+.mch-field {
+	input {
+		padding: 10px;
+	}
+}
+.mch-button {
+	input {
+		text-transform: uppercase;
+	}
+}
+
+$gap-big: calc(40px - -3vw);
+$gap-small: calc(20px - -2vw);
+
+body.no-sidebar .wrap {
+	max-width: 900px;
+}
+
+.separator {
+	opacity: .4;
+}

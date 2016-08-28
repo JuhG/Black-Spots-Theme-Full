@@ -1,0 +1,34 @@
+// ================
+@import "defaults";
+// ================
+
+$white: #fff;
+$black: rgba(#000, .95);
+$brand: #AB977A;
+// Brand variations
+$brand-darker: darken($brand, 10%);
+$brand-lighter: lighten($brand, 10%);
+$brand-dark: darken($brand, 30%);
+// Font colors
+$white-text: $white;
+$text: lighten($black, 40%);
+$heading: lighten($black, 20%);
+$separator: rgba($text, .4);
+$widget-text: $heading;
+// Link colors
+$header-text: $brand-dark;
+$header-text-hover: $brand;
+$link: $brand-darker;
+$link-hover: $brand-lighter;
+$cta: $brand;
+$cta-hover: $brand-darker;
+// Backgrounds
+$header: $white;
+$bg: #f7f7f7;
+$post-bg: $white;
+$widget: $white;
+$footer: $brand-darker;
+
+// ================
+@import "elements";
+// ================

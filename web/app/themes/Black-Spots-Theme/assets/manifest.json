@@ -1,0 +1,62 @@
+{
+  "dependencies": {
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.scss"
+      ],
+      "main": true
+    },
+    "default.css": {
+      "files": [
+        "customizer/color/default.scss"
+      ]
+    },
+    "gold.css": {
+      "files": [
+        "customizer/color/gold.scss"
+      ]
+    },
+    "gray.css": {
+      "files": [
+        "customizer/color/gray.scss"
+      ]
+    },
+    "red.css": {
+      "files": [
+        "customizer/color/red.scss"
+      ]
+    },
+    "green.css": {
+      "files": [
+        "customizer/color/green.scss"
+      ]
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
+    },
+    "customizer-controls.js": {
+      "files": [
+        "scripts/customizer-controls.js"
+      ]
+    },
+    "load-more.js": {
+      "files": [
+        "scripts/load-more.js"
+      ]
+    },
+    "jquery.js": {
+      "bower": ["jquery"]
+    }
+  },
+  "config": {
+    "devUrl": "http://black-spots.dev"
+  }
+}

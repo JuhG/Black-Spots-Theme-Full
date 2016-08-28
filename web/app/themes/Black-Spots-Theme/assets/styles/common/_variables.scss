@@ -1,0 +1,41 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+// Responsive
+$grid-gutter-width:          30px !default;
+$screen-lg:                  1270px;
+$container-large-desktop:   (1210px + $grid-gutter-width);
+
+// Grid settings
+$main-md-columns:       12;
+$sidebar-md-columns:    4;
+
+// Colors
+$brand-primary:         #AB977A;
+$brand-darker:			darken($brand-primary, 30%);
+$gray-light:            lighten(#000, 65%);
+$base-color:            rgba(0,0,0,0.95);
+$text-color:            lighten($base-color, 40%);
+$headings-color:		lighten($base-color, 20%);
+
+$link-color:            $base-color;
+$link-hover-color:      $base-color;
+$link-hover-decoration: none;
+
+$body-bg:				#f7f7f7;
+$post-bg: 				#fff;
+
+// Fonts
+$font-family-sans-serif:  'Open Sans', sans-serif;
+$font-family-serif:       'Roboto', sans-serif;
+
+$font-family-base:        $font-family-serif;
+$headings-font-family:    $font-family-sans-serif;
+$headings-font-weight:    300;
+
+$line-height-base: 	  1.6;
+
+// Disable border radius
+$border-radius-base:        0;
+$border-radius-large:       0;
+$border-radius-small:		0;

@@ -1,0 +1,24 @@
+footer {
+	margin-top: calc(2vw - -20px);
+	a {
+		text-decoration: underline;
+	}
+}
+
+.footer-widgets {
+	width: 33.33333333333333%;
+	padding: 0 1.5%;
+	margin-bottom: calc(2vw - -20px);
+	float: left;
+}
+
+@media (max-width: 991px) {
+	.footer-widgets {
+		width: 100%;
+		padding: 0;
+	}
+}
+
+.footer-copy-container {
+	padding: 20px 0;
+}

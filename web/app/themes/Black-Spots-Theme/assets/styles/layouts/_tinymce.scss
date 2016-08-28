@@ -1,0 +1,21 @@
+body#tinymce {
+	margin: 12px !important;
+
+	.alignright, .alignleft {
+		z-index: 1;
+	}
+
+	figure img + br,
+	figure a + br,
+	figure img + p,
+	figure a + p  { display: none; }
+
+	.gallery {
+		.gallery-item {
+			width: auto !important;
+		}
+		br {
+			display: none !important;
+		}
+	}
+}

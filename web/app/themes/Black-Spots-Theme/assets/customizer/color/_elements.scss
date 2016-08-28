@@ -1,0 +1,34 @@
+// bg
+body { background-color: $bg; }
+
+//post-bg
+body:not(.single) .post, .single-content, .comments { background-color: $post-bg; }
+.header-container { background-color: $header; }
+h5.widget__title { background-color: $widget; }
+
+// text
+body { color: $text; }
+h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a { color: $heading; }
+.separator { color: $separator; }
+h5.widget__title { color: $widget-text; }
+
+// alt-text
+.btn, .btn a, .search-form .search-submit { color: $cta-text; }
+.footer-copy-container { color: $footer-text; }
+
+// brand
+a {	color: $link; }
+.master-title a { color: $header-text; }
+.btn, .btn a, .search-form .search-submit { background-color: $cta; }
+.navbar-toggle .icon-bar { background-color: $header-text; }
+.footer-copy-container { background-color: $footer; }
+
+@if ( $bg == $post-bg ) {
+	body:not(.single) .post {
+		padding: 0;
+		.entry-image {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}

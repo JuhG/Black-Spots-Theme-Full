@@ -1,0 +1,29 @@
+.widget {
+	margin-bottom: $gap-small;
+	&__title {
+		padding: 8px;
+		text-align: center;
+	}
+}
+
+.null-instagram-feed {
+	ul {
+		@extend %clearfix;
+	}
+	li {
+		float: left;
+		width: 33.333333%;
+		padding: 1%;
+	}
+}
+
+.search-form {
+	display: flex;
+	label {
+		flex-grow: 1;
+	    margin-bottom: 0;
+	}
+	.search-field {
+		width: 95%;
+	}
+}

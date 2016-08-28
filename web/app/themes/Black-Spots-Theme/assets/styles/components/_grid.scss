@@ -1,0 +1,10 @@
+// Grid system
+.main {
+  @include make-md-column($main-md-columns);
+  .sidebar-primary & {
+    @include make-md-column($main-md-columns - $sidebar-md-columns);
+  }
+}
+.sidebar {
+  @include make-md-column($sidebar-md-columns);
+}
