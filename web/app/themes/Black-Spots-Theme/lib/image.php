@@ -54,10 +54,12 @@ function get ( $size = 'content_without_sidebar' ) {
 		return $img;
 	}
 
-	preg_match_all('/<img.+alt=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $alt_matches);
-	$image['alt'] = $alt_matches [1] [0];
-	preg_match_all('/<img.+title=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $title_matches);
-	$image['title'] = $title_matches [1] [0];
+	if ( preg_match_all('/<img.+alt=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $alt_matches) ) {
+		$image['alt'] = $alt_matches [1] [0];
+	}
+	if ( preg_match_all('/<img.+title=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $title_matches) ) {
+		$image['title'] = $title_matches [1] [0];
+	}
 
 	$img =
 		'<img'.

@@ -11,6 +11,15 @@
  * ======================================================================== */
 
 (function($) {
+  // global variables
+  var $body = $('body');
+  var $win = $(window);
+  var $header = $('.banner');
+  var headerHeight = $header.height();
+  var $headerImage = $('.header-image img');
+  var $headerTop = $('.header-container');
+  var st, pos, tr;
+  var opacity = 1;
 
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
@@ -39,21 +48,32 @@
             "<i class='dashicons dashicons-arrow-right-alt2'></i>"
           ],
         });
-      }
-    },
-    // Home page
-    'home': {
-      init: function() {
-        // JavaScript to be fired on the home page
-      },
-      finalize: function() {
-        // JavaScript to be fired on the home page, after the init JS
-      }
-    },
-    // About us page, note the change from about-us to about_us.
-    'about_us': {
-      init: function() {
-        // JavaScript to be fired on the about us page
+
+        /**
+         * Parallax
+         */
+        if ( $body.is('.header-parallax') ) {
+          var headerParallax = function (e) {
+            st = document.body.scrollTop;
+            pos = st / 2;
+            tr = 'translateY('+ pos +'px)';
+            if ( $body.is('.header-parallax-fade') ) opacity = 1.2 - st / headerHeight;
+            $headerImage.css({
+              transform: tr,
+              webkitTransform: tr,
+              opacity: opacity
+            });
+            if ( $body.is('.header-static') ) {
+              $headerTop.css({
+                transform: tr,
+                webkitTransform: tr
+              });
+            }
+          }
+          $win.on('scroll', lodashThrottle(headerParallax, 10));
+          headerParallax();
+        }
+
       }
     }
   };

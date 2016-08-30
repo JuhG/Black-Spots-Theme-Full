@@ -2,6 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/lodash.throttle.js",
         "scripts/main.js"
       ],
       "main": true
@@ -32,6 +33,6 @@
     }
   },
   "config": {
-    "devUrl": "http://black-spots.dev"
+    "devUrl": "http://black-spots-theme.dev"
   }
 }

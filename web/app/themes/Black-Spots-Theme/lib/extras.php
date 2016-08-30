@@ -26,6 +26,16 @@ function body_class($classes) {
     $classes[] = 'custom-header';
   }
 
+  if ( $pos = get_theme_mod( 'header_position' ) ) {
+    $classes[] = 'header-' . $pos;
+  }
+
+  // TODO: actual check
+  // if ( get_theme_mod( 'header_parallax' ) ) {
+    $classes[] = 'header-parallax';
+    $classes[] = 'header-parallax-fade';
+  // }
+
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
