@@ -3,9 +3,9 @@
 }
 body {
 	line-height: 1.6;
-	font-size: 14px;
 	letter-spacing: 1px;
 	font-weight: normal;
+	font-size: $font-size-medium;
 }
 .h1, .h2, .h3, .h4, .h5, h1, h2, h3, h4, h5 {
 	text-transform: uppercase;
@@ -16,24 +16,10 @@ body {
 	}
 }
 // Special case: WIDGET title
-h5.widget__title {
+h5.widget-title {
 	letter-spacing: 3px;
 	font-weight: bold;
 	line-height: 1.5;
-}
-a {
-	position: static;
-	display: inline-block;
-	transition: opacity ease .4s;
-	&:hover {
-		opacity: .6;
-	}
-}
-.btn, .btn a, .search-form .search-submit {
-	text-transform: uppercase;
-	border-radius: 2px;
-	transition: all ease .4s;
-	border: none;
 }
 .nav-primary {
 	a {

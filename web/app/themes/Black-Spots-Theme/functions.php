@@ -22,6 +22,7 @@ $sage_includes = [
   'lib/header.php',
   'lib/gallery.php',
   'lib/load-more.php',
+  'lib/editor.php',
   'lib/customizer/custom-color.php',
   'lib/ext/wp_bootstrap_navwalker.php'
 ];

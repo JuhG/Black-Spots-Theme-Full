@@ -50,6 +50,18 @@
         });
 
         /**
+         *
+         */
+        function linksWithImages () {
+          var $as = $('a, .btn');
+          $as.each(function () {
+            var $a = $(this);
+            if ( $a.find('img, picture').length ) $a.addClass('image-inside');
+          });
+        }
+        linksWithImages();
+
+        /**
          * Parallax
          */
         if ( $body.is('.header-parallax') ) {

@@ -19,3 +19,10 @@ body#tinymce {
 		}
 	}
 }
+
+.rte, body#tinymce {
+	p {
+		line-height: 2;
+		margin-bottom: 40px;
+	}
+}

@@ -1,6 +1,10 @@
 // Glyphicons font path
 $icon-font-path:        "../fonts/";
 
+// Fonts
+$font-size-base: 14px;
+$font-size-medium: ceil(($font-size-base * 1.14)); // ~16px
+
 // Responsive
 $grid-gutter-width:          30px !default;
 $screen-lg:                  1270px;

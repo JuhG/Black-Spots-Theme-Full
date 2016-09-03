@@ -52,7 +52,7 @@ function widgets_init() {
     'id'            => 'sidebar-primary',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h5 class="widget__title panel panel-default">',
+    'before_title'  => '<h5 class="widget-title panel panel-default">',
     'after_title'   => '</h5>'
   ]);
 
@@ -61,7 +61,7 @@ function widgets_init() {
     'id'            => 'sidebar-footer-1',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h5 class="widget__title panel panel-default">',
+    'before_title'  => '<h5 class="widget-title panel panel-default">',
     'after_title'   => '</h5>'
   ]);
 
@@ -70,7 +70,7 @@ function widgets_init() {
     'id'            => 'sidebar-footer-2',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h5 class="widget__title panel panel-default">',
+    'before_title'  => '<h5 class="widget-title panel panel-default">',
     'after_title'   => '</h5>'
   ]);
 
@@ -79,7 +79,7 @@ function widgets_init() {
     'id'            => 'sidebar-footer-3',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
-    'before_title'  => '<h5 class="widget__title panel panel-default">',
+    'before_title'  => '<h5 class="widget-title panel panel-default">',
     'after_title'   => '</h5>'
   ]);
 }

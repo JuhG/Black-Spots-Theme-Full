@@ -1,0 +1,29 @@
+.btn, .search-form .search-submit {
+	text-transform: uppercase;
+	border-radius: 2px;
+	transition: all ease .4s;
+	border: none;
+}
+
+.btn.btn-primary {
+	a {
+		background-color: transparent;
+		color: inherit;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+a, .btn {
+	position: static;
+	display: inline-block;
+	transition: opacity ease .4s;
+	&:not(.image-inside) {
+		&:hover,
+		&:focus,
+		&.focus {
+			opacity: .6;
+		}
+	}
+}

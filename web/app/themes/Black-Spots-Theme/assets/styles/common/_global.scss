@@ -35,13 +35,6 @@ li {
 	line-height: 2;
 }
 
-.rte {
-	p {
-		line-height: 2;
-		margin-bottom: 40px;
-	}
-}
-
 .main {
 	margin-bottom: calc(2vw - -20px);
 }
@@ -102,9 +95,6 @@ li {
 		text-transform: uppercase;
 	}
 }
-
-$gap-big: calc(40px - -3vw);
-$gap-small: calc(20px - -2vw);
 
 body.no-sidebar .wrap {
 	max-width: 900px;

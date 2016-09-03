@@ -1,6 +1,6 @@
 .widget {
-	margin-bottom: $gap-small;
-	&__title {
+	margin-bottom: $gap-medium;
+	.widget-title {
 		padding: 8px;
 		text-align: center;
 	}

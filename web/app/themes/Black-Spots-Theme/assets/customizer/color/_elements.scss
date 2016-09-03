@@ -4,13 +4,13 @@ body { background-color: $bg; }
 //post-bg
 body:not(.single) .post, .single-content, .comments { background-color: $post-bg; }
 .header-container { background-color: $header; }
-h5.widget__title { background-color: $widget; }
+h5.widget-title { background-color: $widget; }
 
 // text
 body { color: $text; }
 h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a { color: $heading; }
 .separator { color: $separator; }
-h5.widget__title { color: $widget-text; }
+h5.widget-title { color: $widget-text; }
 
 // alt-text
 .btn, .btn a, .search-form .search-submit { color: $cta-text; }

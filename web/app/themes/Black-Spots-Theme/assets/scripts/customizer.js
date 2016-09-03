@@ -52,7 +52,7 @@
   function changePostBg ( to ) {
 			$('body:not(.single) .post, .single-content, .comments').css('background-color', to);
 			$('.header-container').css('background-color', to);
-			$('h5.widget__title').css('background-color', to);
+			$('h5.widget-title').css('background-color', to);
 			checkBgAndPostBg();
 			current.postBg = to;
   }
@@ -61,7 +61,7 @@
 			$('body').css('color', to);
 			$('h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a').css('color', to);
 			$('.separator').css('color', to);
-			$('h5.widget__title').css('color', to);
+			$('h5.widget-title').css('color', to);
 			current.text = to;
   }
 

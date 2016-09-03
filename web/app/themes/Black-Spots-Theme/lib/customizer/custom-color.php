@@ -112,25 +112,99 @@ function get_final_colors () {
 	return array_merge( $color_scheme_colors, $custom_colors );
 }
 
-function colorpalette_add_customizer_css() {
+function get_final_customizer_css_array () {
+	return array(
+		'bg' =>  array(
+			'body' => 'background-color'
+		),
+		'post-bg' => array(
+			'body:not(.single) .post' => 'background-color',
+			'.single-content'   	  => 'background-color',
+			'.comments'        		  => 'background-color',
+			'.header-container' 	  => 'background-color',
+			'h5.widget-title'  	  => 'background-color',
+		),
+		'text' => array(
+			'body' => 'color',
+			'h1'   => 'color',
+			'h2'   => 'color',
+			'h3'   => 'color',
+			'h4'   => 'color',
+			'h5'   => 'color',
+			'h1 a' => 'color',
+			'h2 a' => 'color',
+			'h3 a' => 'color',
+			'h4 a' => 'color',
+			'h5 a' => 'color',
+			'.separator' => 'color',
+			'h5.widget-title' => 'color',
+		),
+		'alt-text' => array(
+			'.btn' => 'color',
+			'.btn:focus' => 'color',
+			'.btn.focus' => 'color',
+			'.btn:hover' => 'color',
+			'.search-form .search-submit' => 'color',
+			'.footer-copy-container' => 'color',
+		),
+		'brand' => array(
+			'a' => 'color',
+			'.master-title a' => 'color',
+			'.btn' => 'background-color',
+			'.btn:focus' => 'background-color',
+			'.btn.focus' => 'background-color',
+			'.btn:hover' => 'background-color',
+			'.search-form .search-submit' => 'background-color',
+			'.navbar-toggle .icon-bar' => 'background-color',
+			'.footer-copy-container' => 'background-color',
+		)
+
+	);
+	// return "
+	// 	body { background-color: {$c['bg']}; }
+	// 	body:not(.single) .post, .single-content, .comments { background-color: {$c['post-bg']}; }
+	// 	.header-container { background-color: {$c['post-bg']}; }
+	// 	h5.widget-title { background-color: {$c['post-bg']}; }
+	// 	body { color: {$c['text']}; }
+	// 	h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a { color: {$c['text']}; }
+	// 	.separator { color: {$c['text']}; }
+	// 	h5.widget-title { color: {$c['text']}; }
+	// 	.btn, .btn:focus, .btn.focus, .btn:hover, .search-form .search-submit { color: {$c['alt-text']}; }
+	// 	.footer-copy-container { color: {$c['alt-text']}; }
+	// 	a {	color: {$c['brand']}; }
+	// 	.master-title a { color: {$c['brand']}; }
+	// 	.btn, .btn:focus, .btn.focus, .btn:hover, .search-form .search-submit { background-color: {$c['brand']}; }
+	// 	.navbar-toggle .icon-bar { background-color: {$c['brand']}; }
+	// 	.footer-copy-container { background-color: {$c['brand']}; }
+	// 	";
+}
+
+function get_final_customizer_css ( $admin = false ) {
 	$colors = get_final_colors();
-	$custom_css = "
-		body { background-color: {$colors['bg']}; }
-		body:not(.single) .post, .single-content, .comments { background-color: {$colors['post-bg']}; }
-		.header-container { background-color: {$colors['post-bg']}; }
-		h5.widget__title { background-color: {$colors['post-bg']}; }
-		body { color: {$colors['text']}; }
-		h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a { color: {$colors['text']}; }
-		.separator { color: {$colors['text']}; }
-		h5.widget__title { color: {$colors['text']}; }
-		.btn, .btn a, .search-form .search-submit { color: {$colors['alt-text']}; }
-		.footer-copy-container { color: {$colors['alt-text']}; }
-		a {	color: {$colors['brand']}; }
-		.master-title a { color: {$colors['brand']}; }
-		.btn, .btn a, .search-form .search-submit { background-color: {$colors['brand']}; }
-		.navbar-toggle .icon-bar { background-color: {$colors['brand']}; }
-		.footer-copy-container { background-color: {$colors['brand']}; }
-		";
-	wp_add_inline_style( 'sage/css', $custom_css );
+	$css_array = get_final_customizer_css_array();
+	$css = '';
+	foreach ($css_array as $color => $styles) {
+		foreach ($styles as $selector => $style) {
+			if ( $admin ) {
+				$css .= 'body#tinymce ';
+				if ( 'body' === trim($selector) ) $selector = '';
+			}
+			$css .= $selector .'{'. $style .':'. $colors[ $color ] .'}';
+		}
+	}
+	return $css;
+}
+
+function colorpalette_add_customizer_css() {
+	$css = get_final_customizer_css();
+	wp_add_inline_style( 'sage/css', $css );
 }
 add_action( 'wp_enqueue_scripts', 'colorpalette_add_customizer_css', 100 );
+
+function colorpalette_add_customizer_css_to_admin ( $settings ) {
+	$css = get_final_customizer_css( true );
+	if ( ! isset( $settings['content_style'] ) ) $settings['content_style'] = '';
+	$settings['content_style'] .= preg_replace( "/\r|\n/", "", $css );
+	return $settings;
+}
+add_filter( 'tiny_mce_before_init', 'colorpalette_add_customizer_css_to_admin' );
