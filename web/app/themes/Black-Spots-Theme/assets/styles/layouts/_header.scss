@@ -44,6 +44,13 @@
 .header-image {
 	text-align: center;
 	overflow: hidden;
+	body.header-parallax & {
+		position: fixed;
+		left: 0;
+		top: 50px;
+	}
+	body.header-parallax & img {
+	}
 }
 
 .page-header {

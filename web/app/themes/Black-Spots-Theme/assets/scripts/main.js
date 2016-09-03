@@ -53,9 +53,11 @@
          * Parallax
          */
         if ( $body.is('.header-parallax') ) {
+          $header.css('min-height', $headerImage.height());
+          headerHeight = $header.height();
           var headerParallax = function (e) {
             st = document.body.scrollTop;
-            pos = st / 2;
+            pos = -1 * ( st / 2 );
             tr = 'translateY('+ pos +'px)';
             if ( $body.is('.header-parallax-fade') ) opacity = 1.2 - st / headerHeight;
             $headerImage.css({
@@ -65,8 +67,8 @@
             });
             if ( $body.is('.header-static') ) {
               $headerTop.css({
-                transform: tr,
-                webkitTransform: tr
+                transform: -tr,
+                webkitTransform: -tr
               });
             }
           }
