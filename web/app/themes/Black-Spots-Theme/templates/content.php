@@ -11,7 +11,12 @@ use Roots\Sage\Image;
 		</div>
 	<?php endif ?>
 	<header>
-		<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+		<h2 class="entry-title">
+	        <?php if ( is_sticky() ): ?>
+	            <div class="dashicons dashicons-sticky"></div>
+	        <?php endif; ?>
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		</h2>
 		<?php get_template_part('templates/entry-meta'); ?>
 	</header>
 	<div class="entry-summary rte clearfix">
@@ -19,7 +24,7 @@ use Roots\Sage\Image;
 	</div>
 
 	<div class="read-more">
-		<a class="btn btn-primary" href="<?php echo get_permalink() ?>">
+		<a class="button button-primary" href="<?php echo get_permalink() ?>">
 			<?php _e( 'Continue', 'black_spots' ); ?>
 		</a>
 	</div>

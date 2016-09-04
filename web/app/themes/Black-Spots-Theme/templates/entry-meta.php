@@ -1,3 +1,6 @@
+<?php
+use Roots\Sage\Extras;
+?>
 <div class="entry-meta">
 
 	<?php
@@ -20,6 +23,6 @@
 		<span class="separator">//</span>
 	<?php endif ?>
 
-	<time class="updated" datetime="<?php echo get_post_time('c', true); ?>"><?php echo human_time_diff( get_the_date( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?></time>
+	<?php echo Extras\convert_to_time_ago('get_post_time', 'updated'); ?>
 	
 </div>

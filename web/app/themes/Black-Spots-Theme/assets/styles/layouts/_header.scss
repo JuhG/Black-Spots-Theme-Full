@@ -1,5 +1,17 @@
-.banner {
-	display: none;
+.header-container {
+}
+
+.header-image, .header-container {
+	padding: 0;
+}
+
+.title-container, .nav-container {
+	padding: 0 $gap-tiny;
+}
+
+.header-main {
+	display: flex;
+    align-items: center;
 }
 
 .master-title {
@@ -8,17 +20,21 @@
 	margin: 0;
 	a {
 		font-size: 30px;
+		line-height: 50px;
 		text-transform: uppercase;
 		letter-spacing: 5px;
 		font-family: $font-family-sans-serif;
-		margin-top: 2px;
     	display: inline-block;
+		color: inherit;
+    	&:hover {
+    		color: inherit;
+    	}
 	}
 }
 
 @media (max-width: $screen-sm) {
 	.master-title {
-		margin: 4px 0;
+		padding-right: 50px;
 		a {
 			font-size: 20px;
 			letter-spacing: 2px;
@@ -33,10 +49,17 @@
 .site-icon {
 	display: inline-block;
 	vertical-align: middle;
+	line-height: 1;
+    height: auto;
+    font-size: 0;
 	margin-right: 15px;
-	transition: opacity ease .4s;
+	transition: all ease .4s;
+	flex-shrink: 0;
 	&:hover {
-		opacity: .6;
+		opacity: $hover-opacity;
+	}
+	img {
+		display: block;
 	}
 }
 
@@ -76,13 +99,25 @@
 	}
 }
 
+.nav-container {
+	text-transform: uppercase;
+}
+
 @media (min-width: 768px) {
 
 }
 
 @media (max-width: 767px) {
 	.title-container {
-		border-top: 2px solid #fff;
+		border-top: 2px solid;
+	}
+	.nav-container {
+		a {
+			color: inherit;
+			&:hover {
+				color: inherit;
+			}
+		}
 	}
 }
 

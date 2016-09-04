@@ -6,14 +6,8 @@
 // endbower
 
 @import "common/helpers";
+@import "common/gaps";
 @import "common/global";
-@import "common/margins";
-
-// Theme
-@import "theme/widget";
-@import "theme/tag";
-@import "theme/category";
-@import "theme/owl";
 
 @import "components/buttons";
 @import "components/comments";
@@ -21,6 +15,9 @@
 @import "components/grid";
 @import "components/wp-classes";
 @import "components/menu";
+
+@import "theme/widget";
+@import "theme/owl";
 
 @import "layouts/header";
 @import "layouts/sidebar";

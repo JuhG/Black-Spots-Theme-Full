@@ -5,7 +5,7 @@
   // Site title
   api('blogname', function(value) {
     value.bind(function(to) {
-      $('.brand').text(to);
+      $('.master-title a').text(to);
     });
   });
 
@@ -66,7 +66,7 @@
   }
 
   function changeAltText ( to ) {
-    	$('.btn, .btn a, .search-form .search-submit').css('color', to);
+    	$('.button, .button a, .search-form .search-submit').css('color', to);
     	$('.footer-copy-container').css('color', to);
     	current.altText = to;
   }
@@ -74,12 +74,12 @@
   function changeBrand ( to ) {
 			$('a').css('color', to);
 			$('.master-title a').css('color', to);
-			$('.btn, .btn a, .search-form .search-submit').css('background-color', to);
+			$('.button, .button a, .search-form .search-submit').css('background-color', to);
 			$('.navbar-toggle .icon-bar').css('background-color', to);
 			$('.footer-copy-container').css('background-color', to);
 
 			$('h1 a, h2 a, h3 a, h4 a, h5 a').css('color', current.text);
-    	$('.btn, .btn a').css('color', current.altText);
+    	$('.button, .button a').css('color', current.altText);
 			current.brand = to;
   }
 

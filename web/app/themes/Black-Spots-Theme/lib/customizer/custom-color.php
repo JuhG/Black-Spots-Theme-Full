@@ -119,64 +119,60 @@ function get_final_customizer_css_array () {
 		),
 		'post-bg' => array(
 			'body:not(.single) .post' => 'background-color',
-			'.single-content'   	  => 'background-color',
-			'.comments'        		  => 'background-color',
+			// '.single-content'   	  => 'background-color',
+			// '.comments'        		  => 'background-color',
 			'.header-container' 	  => 'background-color',
-			'h5.widget-title'  	  => 'background-color',
+			'h5.widget-title'  	      => 'background-color',
 		),
 		'text' => array(
-			'body' => 'color',
-			'h1'   => 'color',
-			'h2'   => 'color',
-			'h3'   => 'color',
-			'h4'   => 'color',
-			'h5'   => 'color',
-			'h1 a' => 'color',
-			'h2 a' => 'color',
-			'h3 a' => 'color',
-			'h4 a' => 'color',
-			'h5 a' => 'color',
-			'.separator' => 'color',
+			'body'            => 'color',
+			'h1'              => 'color',
+			'h2'              => 'color',
+			'h3'              => 'color',
+			'h4'              => 'color',
+			'h5'              => 'color',
+			'h1 a'            => 'color',
+			'h2 a'            => 'color',
+			'h3 a'            => 'color',
+			'h4 a'            => 'color',
+			'h5 a'            => 'color',
+			'.separator'      => 'color',
 			'h5.widget-title' => 'color',
+			'.master-title'   => 'color',
+			'.nav-container'  => 'color',
 		),
 		'alt-text' => array(
-			'.btn' => 'color',
-			'.btn:focus' => 'color',
-			'.btn.focus' => 'color',
-			'.btn:hover' => 'color',
+			'.button.button-primary'                   => 'color',
 			'.search-form .search-submit' => 'color',
-			'.footer-copy-container' => 'color',
+			'.footer-copy-container'      => 'color',
+			'.navbar-toggle .icon-bar'    => 'color',
+			'.comment-form input[type=submit]' => 'color',
+			'.nav-next'                   => 'color',
+			'.nav-previous'               => 'color',
+			'.owl-theme .owl-controls .owl-page span' => 'color',
+			'.owl-theme .owl-controls .owl-buttons div' => 'color',
+			'.calendar_wrap table tbody a' => 'color',
+			'.if-author' => 'color'
 		),
 		'brand' => array(
-			'a' => 'color',
-			'.master-title a' => 'color',
-			'.btn' => 'background-color',
-			'.btn:focus' => 'background-color',
-			'.btn.focus' => 'background-color',
-			'.btn:hover' => 'background-color',
+			'a'                           => array( 'color', 'border-color' ),
+			'a:hover'                           => array( 'color', 'border-color' ),
+			'.button.button-secondary'          => array( 'color', 'border-color' ),
+			'.title-container' => 'border-color',
+			'.button.button-primary'                => 'background-color',
 			'.search-form .search-submit' => 'background-color',
-			'.navbar-toggle .icon-bar' => 'background-color',
-			'.footer-copy-container' => 'background-color',
+			'.footer-copy-container'      => 'background-color',
+			'.navbar-toggle .icon-bar'    => 'background-color',
+			'.comment-form input[type=submit]' => 'background-color',
+			'.nav-next'                   => 'background-color',
+			'.nav-previous'               => 'background-color',
+			'.owl-theme .owl-controls .owl-page span' => 'background-color',
+			'.owl-theme .owl-controls .owl-buttons div' => 'background-color',
+			'.calendar_wrap table tbody a' => 'background-color',
+			'.if-author' => 'background-color'
 		)
 
 	);
-	// return "
-	// 	body { background-color: {$c['bg']}; }
-	// 	body:not(.single) .post, .single-content, .comments { background-color: {$c['post-bg']}; }
-	// 	.header-container { background-color: {$c['post-bg']}; }
-	// 	h5.widget-title { background-color: {$c['post-bg']}; }
-	// 	body { color: {$c['text']}; }
-	// 	h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a { color: {$c['text']}; }
-	// 	.separator { color: {$c['text']}; }
-	// 	h5.widget-title { color: {$c['text']}; }
-	// 	.btn, .btn:focus, .btn.focus, .btn:hover, .search-form .search-submit { color: {$c['alt-text']}; }
-	// 	.footer-copy-container { color: {$c['alt-text']}; }
-	// 	a {	color: {$c['brand']}; }
-	// 	.master-title a { color: {$c['brand']}; }
-	// 	.btn, .btn:focus, .btn.focus, .btn:hover, .search-form .search-submit { background-color: {$c['brand']}; }
-	// 	.navbar-toggle .icon-bar { background-color: {$c['brand']}; }
-	// 	.footer-copy-container { background-color: {$c['brand']}; }
-	// 	";
 }
 
 function get_final_customizer_css ( $admin = false ) {
@@ -189,7 +185,11 @@ function get_final_customizer_css ( $admin = false ) {
 				$css .= 'body#tinymce ';
 				if ( 'body' === trim($selector) ) $selector = '';
 			}
-			$css .= $selector .'{'. $style .':'. $colors[ $color ] .'}';
+			$css .= $selector .'{';
+			foreach ( (array)$style as $stylename ) {
+				$css .= $stylename .':'. $colors[ $color ] .';';
+			}
+			$css .= '}';
 		}
 	}
 	return $css;
@@ -197,6 +197,16 @@ function get_final_customizer_css ( $admin = false ) {
 
 function colorpalette_add_customizer_css() {
 	$css = get_final_customizer_css();
+	$colors = get_final_colors();
+	if ( $colors['bg'] === $colors['post-bg'] ) {
+		$css .= "body:not(.single) .post {
+			padding: 0;
+		}
+		body:not(.single) .post .entry-image {
+			margin-left: 0;
+			margin-right: 0;
+		}";
+	}
 	wp_add_inline_style( 'sage/css', $css );
 }
 add_action( 'wp_enqueue_scripts', 'colorpalette_add_customizer_css', 100 );

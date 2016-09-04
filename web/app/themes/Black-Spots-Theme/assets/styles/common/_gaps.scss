@@ -1,0 +1,25 @@
+// 1vw => +16px
+// 1920: 19.2
+// 320: 3.2
+
+// 1920: 97.6
+// 320: 49.6
+$gap-big: calc(40px - -3vw);
+
+// 1920: 68.4
+// 320: 36.4
+$gap-medium: calc(30px - -2vw);
+
+// 1920: 39.2
+// 320: 23.2
+$gap-small: calc(20px - -1vw);
+$gap-small-minus: calc(-20px - 1vw);
+
+// 1920: 19.6
+// 320: 11.6
+$gap-tiny: calc(10px - -0.5vw);
+
+%line-top {
+	padding-top: $gap-small;
+	border-top: #ddd 1px solid;
+}

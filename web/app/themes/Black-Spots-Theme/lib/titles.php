@@ -26,7 +26,9 @@ function title() {
 add_filter( 'get_the_archive_title', function ( $title ) {
   if ( false !== strpos($title, ':') ) {
     $arrow = '<div class="separator"><div class="dashicons dashicons-arrow-right-alt2"></div></div>';
-    $title = str_replace(':', $arrow, $title);
+    $from = '/'.preg_quote(': ', '/').'/';
+    $title = preg_replace($from, $arrow, $title, 1);
+    // $title = str_replace(': ', $arrow, $title);
   }
   return $title;
 });

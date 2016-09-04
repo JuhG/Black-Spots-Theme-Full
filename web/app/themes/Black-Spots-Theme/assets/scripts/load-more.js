@@ -12,7 +12,7 @@ jQuery(function($){
 
 	if ( ! $button.length ) return;
 
-	var page = get_page_number($link) || 2;
+	var page = parseInt(bsloadmore.page) + 1;
 	var cache_version = page;
 	var loading = false;
 	var cached = false;
@@ -41,23 +41,17 @@ jQuery(function($){
 		$link.text( loadingText );
 
 		get_next_page(function ( data ) {
-			$link.text( text )
-			$list.append( data.html ).append( $nav );
+			$list.append( data ).append( $nav );
 			$('.type-post').addClass('post');
+			window.history.pushState( null, null, get_next_url( page ) );
 			page++;
-			console.log(  bsloadmore.next_link );
-			// document.getElementById("content").innerHTML = response.html;
-			// document.title = response.pageTitle;
-			window.history.pushState(null, null, $link.attr('href'));
-			// window.location.href = data.next;
+			$link.text( text ).attr( 'href', get_next_url( page ) )
 		});
 
 	});
 
-	function get_page_number ( $a ) {
-		var href = $a.attr('href');
-		var split = href.split('/');
-		return split[ split.length - 2 ];
+	function get_next_url ( p ) {
+		return bsloadmore.next_link.replace( '9999', p );
 	}
 
 	function get_next_page ( cb ) {

@@ -1,5 +1,6 @@
 .comment-list {
   @include list-unstyled;
+  margin-bottom: $gap-big;
 }
 .comment-list ol {
   list-style: none;
@@ -14,21 +15,55 @@
   @extend .form-control;
 }
 .comment-form input[type="submit"] {
-  @extend .btn;
-  @extend .btn-primary;
+  @extend .button;
+  @extend .button-primary;
 }
 
-#comments {
-	.comments-title {
-		text-transform: uppercase;
+.comment-form-comment {
+	margin-top: $gap-small;
+	label {
+		display: none;
 	}
 }
 
+.comment-form-author, .comment-form-email {
+	width: 50%;
+	float: left;
+}
+
+.comment-form-author {
+	padding-right: $gap-tiny;
+}
+
+.comment-form-email {
+	padding-left: $gap-tiny;
+}
+
+@media (max-width: 700px) {
+	.comment-form-author, .comment-form-email {
+		width: 100%;
+		padding: 0;
+	}
+}
+
+.form-submit {
+	clear: both;
+}
+
+.comments {
+	@extend %line-top;
+}
+
+.comments-title {
+	text-transform: uppercase;
+	margin-bottom: $gap-medium;
+}
+
 .comment {
-	margin-top: 20px;
-	margin-left: 20px;
+	margin-top: $gap-tiny;
+	margin-left: $gap-tiny;
 	&.depth-1 {
-		padding-bottom: 40px;
+		padding-bottom: $gap-tiny;
 		margin-left: 0;
 	}
 	.gravatar {
@@ -38,6 +73,24 @@
 		img {
 			border-radius: 50%;
 			box-shadow: 0 0 6px #ddd;
+		}
+	}
+	article {
+		padding-left: $gap-tiny;
+		border-left: 1px solid #ddd;
+	}
+	.if-author {
+		padding: 3px;
+		border-radius: 5px;
+		text-transform: uppercase;
+		font-family: $font-family-sans-serif;
+		font-size: $font-size-small;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&:not(.bypostauthor) {
+		.if-author {
+			display: none;
 		}
 	}
 }
@@ -68,12 +121,7 @@
 	}
 }
 
-.comment-content {
-	// clear: both;
-}
-
 .comment-meta-item {
-	color: red;
 	text-transform: uppercase;
 	font-size: 11px;
 	font-family: $font-family-sans-serif;
@@ -96,11 +144,6 @@
 	margin-left: 5px;
 }
 
-.comment-text {
-	// display: inline-block;
-	// width: calc(100% - 100px);
-}
-
-#respond {
-	margin-bottom: 50px;
+.logged-in-as {
+	margin-top: 10px;
 }

@@ -16,7 +16,9 @@
         <section class="single-content">
 
             <header>
-                <h1 class="entry-title"><?php the_title(); ?></h1>
+                <h1 class="entry-title">
+                    <?php the_title(); ?>
+                </h1>
                 <?php get_template_part('templates/entry-meta'); ?>
             </header>
 
@@ -28,8 +30,10 @@
               <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'black_spots'), 'after' => '</p></nav>']); ?>
 
               <?php if (has_tag()): ?>
-                <div class="dashicons dashicons-tag"></div>
-                <?php the_tags(''); ?>
+                <div class="single-tags">
+                    <div class="dashicons dashicons-tag"></div>
+                    <?php the_tags(''); ?>
+                </div>
               <?php endif ?>
 
             </footer>

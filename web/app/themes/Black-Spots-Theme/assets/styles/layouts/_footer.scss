@@ -1,5 +1,5 @@
-footer {
-	margin-top: calc(2vw - -20px);
+#footer {
+	margin-top: $gap-big;
 	a {
 		text-decoration: underline;
 	}

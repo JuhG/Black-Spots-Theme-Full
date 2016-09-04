@@ -35,65 +35,32 @@ li {
 	line-height: 2;
 }
 
-.main {
-	margin-bottom: calc(2vw - -20px);
-}
-
-.btn, .btn a {
+.button, .button a {
 	font-family: $font-family-sans-serif;
 }
 
 // Infinite scrolling
 
+.nav-previous, .nav-next {
+		width: 260px;
+		display: block !important;
+		margin-left: auto;
+		margin-right: auto;
+}
+
 .nav-previous {
-	@extend .btn;
-	@extend .btn-primary;
-	display: block;
-	max-width: 260px;
-	margin-left: auto;
-	margin-right: auto;
+	@extend .button;
+	@extend .button-primary;
 }
 
 .nav-next {
-	@extend .btn;
-	@extend .btn-primary;
-	display: block;
-	max-width: 260px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: calc(2vw - -20px);
+	@extend .button;
+	@extend .button-primary;
+	margin-bottom: $gap-medium !important;
 }
 
 .posts-navigation {
 	margin-bottom: 80px;
-}
-
-// Mailchimp
-.mch-widget {
-	background-color: #fff;
-	padding: 20px;
-}
-.mch-text {
-	text-transform: uppercase;
-	text-align: center;
-	margin-bottom: 20px;
-}
-.mch-field, .mch-button {
-	input {
-		display: block;
-		width: 90%;
-		margin: 10px auto;
-	}
-}
-.mch-field {
-	input {
-		padding: 10px;
-	}
-}
-.mch-button {
-	input {
-		text-transform: uppercase;
-	}
 }
 
 body.no-sidebar .wrap {
@@ -102,4 +69,14 @@ body.no-sidebar .wrap {
 
 .separator {
 	opacity: .4;
+}
+
+$hover-opacity: .6;
+
+.alert {
+	// background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-bottom: none;
+	border-left-width: 5px;
 }

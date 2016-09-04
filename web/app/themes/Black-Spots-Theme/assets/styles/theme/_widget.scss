@@ -1,8 +1,17 @@
 .widget {
 	margin-bottom: $gap-medium;
+	padding: 0 $gap-small;
 	.widget-title {
 		padding: 8px;
 		text-align: center;
+		margin-left: $gap-small-minus;
+		margin-right: $gap-small-minus;
+	}
+}
+
+.widget_sp_image {
+	img {
+		margin-bottom: 10px;
 	}
 }
 
@@ -17,6 +26,10 @@
 	}
 }
 
+.widget_search .search-form {
+	margin-left: $gap-small-minus;
+	margin-right: $gap-small-minus;
+}
 .search-form {
 	display: flex;
 	label {
@@ -26,4 +39,61 @@
 	.search-field {
 		width: 95%;
 	}
+}
+
+/* calendar widget */
+.calendar_wrap { padding-left: $gap-small; padding-right: $gap-small; margin-left: $gap-small-minus; margin-right: $gap-small-minus; background-color: #fff; padding-bottom: $gap-small; }
+.calendar_wrap table {width: 100%; }
+.calendar_wrap table caption { text-align: right; color: #333; font-size: 12px; margin-top: 10px; margin-bottom: 15px; }
+.calendar_wrap table thead { font-size: 10px; }
+.calendar_wrap table thead th { padding-bottom: 10px; }
+.calendar_wrap table tbody { color: #aaa; }
+.calendar_wrap table tbody a { padding: 8px 0; width: 100%; }
+.calendar_wrap table tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; height:42px; &:empty{display: none;}}
+.calendar_wrap table tbody td:hover { background: #fff; }
+.calendar_wrap table tbody .pad { background: none; }
+.calendar_wrap table tfoot #next { text-transform: uppercase; text-align: right; }
+.calendar_wrap table tfoot #prev { text-transform: uppercase; padding-top: 10px; }
+
+#recentcomments a {
+	display: inline-block !important;
+}
+
+// Mailchimp
+.mch-widget {
+	background-color: #fff;
+	padding: $gap-tiny;
+	margin-left: $gap-small-minus;
+	margin-right: $gap-small-minus;
+}
+.mch-text {
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.mch-field, .mch-button {
+	input {
+		display: block;
+		width: 90%;
+		margin: 10px auto;
+	}
+}
+.mch-field {
+	input {
+		padding: 10px;
+	}
+}
+.mch-button {
+	input {
+		text-transform: uppercase;
+	}
+}
+.mc4wp-alert {
+	@extend .alert;
+}
+.mc4wp-notice {
+	@extend .alert-warning;
+}
+.mc4wp-error {
+	@extend .alert-danger;
 }

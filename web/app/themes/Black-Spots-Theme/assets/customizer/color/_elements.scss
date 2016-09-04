@@ -13,13 +13,13 @@ h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a { color: $heading; }
 h5.widget-title { color: $widget-text; }
 
 // alt-text
-.btn, .btn a, .search-form .search-submit { color: $cta-text; }
+.button, .button a, .search-form .search-submit { color: $cta-text; }
 .footer-copy-container { color: $footer-text; }
 
 // brand
 a {	color: $link; }
 .master-title a { color: $header-text; }
-.btn, .btn a, .search-form .search-submit { background-color: $cta; }
+.button, .button a, .search-form .search-submit { background-color: $cta; }
 .navbar-toggle .icon-bar { background-color: $header-text; }
 .footer-copy-container { background-color: $footer; }
 

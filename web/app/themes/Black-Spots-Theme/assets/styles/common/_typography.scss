@@ -11,6 +11,7 @@ body {
 	text-transform: uppercase;
 	margin: 0;
 	font-weight: 300;
+	line-height: 1.25;
 	a {
 		font-weight: 300;
 	}
@@ -25,15 +26,15 @@ h5.widget-title {
 	a {
 		transition: opacity ease .4s;
 		&:hover, &:focus, &[aria-expanded=true] {
-			opacity: .6;
+			opacity: $hover-opacity;
 		}
 	}
 }
 .master-title {
 	font-weight: 300;
-	transition: opacity ease .4s;
+	transition: all ease .4s;
 	&:hover {
-		opacity: .6;
+		opacity: $hover-opacity;
 	}
 	a {
 		font-weight: 300;

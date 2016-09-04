@@ -1,29 +1,77 @@
-.btn, .search-form .search-submit {
+.button {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    letter-spacing: 1px;
+}
+
+a, .button {
+	position: static;
+	display: inline-block;
+	transition: all ease .4s;
+	&:not(.image-inside) {
+		&:hover,
+		&:focus,
+		&.focus {
+			opacity: $hover-opacity;
+		}
+	}
+}
+
+.button {
 	text-transform: uppercase;
 	border-radius: 2px;
 	transition: all ease .4s;
+	font-family: $font-family-sans-serif;
 	border: none;
 }
 
-.btn.btn-primary {
+.button.button-primary,
+.button.button-primary:hover,
+.button.button-primary:focus {
 	a {
-		background-color: transparent;
-		color: inherit;
+		background-color: transparent !important;
+		color: inherit !important;
+		&:after {
+			border-color: transparent;
+		}
 		&:hover {
 			opacity: 1;
 		}
 	}
 }
 
-a, .btn {
-	position: static;
-	display: inline-block;
-	transition: opacity ease .4s;
-	&:not(.image-inside) {
-		&:hover,
-		&:focus,
-		&.focus {
-			opacity: .6;
-		}
-	}
+.button.button-secondary {
+	line-height: 1;
+	padding: 2px 5px;
+	margin: 0 2px;
+	border: 1px solid;
+	text-transform: uppercase;
+}
+[rel="category tag"], [rel="tag category"], [rel="category"] {
+	@extend .button;
+	@extend .button-secondary;
+}
+
+[rel="tag"], .tagcloud a {
+	text-transform: uppercase;
+	line-height: 1;
+	padding-bottom: 2px;
+	border-bottom: 2px solid;
+	font-family: $font-family-sans-serif;
 }

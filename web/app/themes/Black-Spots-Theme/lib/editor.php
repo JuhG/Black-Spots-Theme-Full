@@ -33,12 +33,12 @@ function bs_mce_toolbars( $settings ) {
         array(
             'title' => __( 'Button Primary', 'black_spots' ),
             'block' => 'div',
-            'classes' => array( 'btn', 'btn-primary' )
+            'classes' => array( 'button', 'button-primary' )
         ),
         array(
             'title' => __( 'Button Secondary', 'black_spots' ),
             'block' => 'div',
-            'classes' => array( 'btn', 'btn-secondary' )
+            'classes' => array( 'button', 'button-secondary' )
         ),
         array(
             'title'   => __( 'Two columns', 'black_spots' ),

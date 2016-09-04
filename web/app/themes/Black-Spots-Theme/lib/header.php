@@ -55,9 +55,8 @@ function header_type_add_customizer_css() {
 	$type = get_theme_mod( 'header_width' );
 	if ( $type !== 'full' ) return;
 	$custom_css = "
-		.header-image {
+		.header-image, .header-container {
 			width: 100%;
-			padding: 0;
 		}";
 	wp_add_inline_style( 'sage/css', $custom_css );
 }

@@ -32,8 +32,8 @@ function body_class($classes) {
 
   // TODO: actual check
   // if ( get_theme_mod( 'header_parallax' ) ) {
-    $classes[] = 'header-parallax';
-    $classes[] = 'header-parallax-fade';
+    // $classes[] = 'header-parallax';
+    // $classes[] = 'header-parallax-fade';
   // }
 
   return $classes;
@@ -54,3 +54,28 @@ function SearchFilter($query) {
   return $query;
 }
 add_filter('pre_get_posts', __NAMESPACE__ . '\\SearchFilter');
+
+/**
+ * Changing the date format to a twitterlike format
+ */ 
+function convert_to_time_ago( $date_function, $classes = array() ) {
+
+  $datetime = call_user_func( $date_function, 'c', true );
+  $title_date = call_user_func( $date_function, get_option('date_format') );
+  $title_time = call_user_func( $date_function, get_option('time_format') );
+  $title = $title_date . ' ' . $title_time;
+  $timestamp = call_user_func( $date_function, 'U' );
+  $class = implode( ' ', (array) $classes );
+  $diff = human_time_diff( $timestamp, current_time( 'timestamp' ) );
+
+  if ( strpos(get_locale(), 'en') !== false ) {
+    $text = $diff . ' ago';
+  } else {
+    $text = $title_date;
+  }
+
+  return sprintf(
+    '<time class="%s" datetime="%s" title="%s" itemprop="datePublished">%s</time>',
+    $class, $datetime, $title, $text
+  );
+}

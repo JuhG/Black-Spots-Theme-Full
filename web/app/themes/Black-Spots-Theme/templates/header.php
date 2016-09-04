@@ -1,5 +1,5 @@
 <header class="banner">
-	<div class="header-container">
+	<div class="header-container container">
 
 		<?php if (has_nav_menu('primary_navigation')): ?>
 
@@ -12,7 +12,7 @@
 
 		<?php endif; ?>
 
-		<div class="nav-container container">
+		<div class="nav-container">
 
 			<?php
 			/*
@@ -48,7 +48,7 @@
 
 		</div>
 
-		<div class="title-container container">
+		<div class="title-container">
 			
 			<div class="header-main">
 

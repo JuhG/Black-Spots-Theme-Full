@@ -34,7 +34,10 @@
 .wp-caption {
 }
 .wp-caption-text {
-  margin-top: $line-height-computed;
+  margin-top: 10px;
+}
+.gallery-caption {
+  padding: 0 $gap-tiny;
 }
 
 // Text meant only for screen readers

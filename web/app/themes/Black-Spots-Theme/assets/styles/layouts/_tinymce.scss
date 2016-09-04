@@ -23,6 +23,21 @@ body#tinymce {
 .rte, body#tinymce {
 	p {
 		line-height: 2;
-		margin-bottom: 40px;
+		margin-bottom: $gap-small;
+	}
+	a:not(.image-inside) {
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 2px;
+			border-bottom: 2px solid;
+			border-color: inherit;
+			width: 100%;
+			transition: opacity ease .4s;
+		}
+		&:hover:after {
+			opacity: $hover-opacity;
+		}
 	}
 }

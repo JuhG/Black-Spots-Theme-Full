@@ -34,7 +34,7 @@
          * Fluidbox support to all image by default
          */
         $('.fluidbox').closest('a').fluidbox();
-        var $g = $('.owl-carousel');
+        // var $g = $('.owl-carousel');
 
         $('.gallery').owlCarousel({
           singleItem: true,
@@ -53,7 +53,7 @@
          *
          */
         function linksWithImages () {
-          var $as = $('a, .btn');
+          var $as = $('a, .button');
           $as.each(function () {
             var $a = $(this);
             if ( $a.find('img, picture').length ) $a.addClass('image-inside');
