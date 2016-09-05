@@ -8,3 +8,10 @@
 .sidebar {
   @include make-md-column($sidebar-md-columns);
 }
+
+@media (max-width: 767px) {
+	.sidebar-primary .main {
+		padding-left: 5vw;
+		padding-right: 5vw;
+	}
+}

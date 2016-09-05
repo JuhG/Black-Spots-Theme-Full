@@ -10,7 +10,7 @@
 	.entry-meta {
 		text-transform: uppercase;
 		font-family: $font-family-sans-serif;
-	    line-height: 2.2;
+		line-height: 2;
 	}
 	.author {
 		display: inline-block;
@@ -32,15 +32,14 @@
 
 // Post list
 body:not(.single) .post {
-	padding: 20px;
-	padding-top: 0 !important;
+
+	.entry-content {
+		padding: $gap-tiny;
+	}
 
 	.entry-image {
-		margin-bottom: $gap-tiny;
-		margin-left: -20px;
-		margin-right: -20px;
+		padding-bottom: $gap-tiny;
 		img {
-			display:block;
 			max-width: 100%;
 			height: auto;
 		}
@@ -78,8 +77,10 @@ body:not(.single) .post {
 // Post detail
 body.single .post {
 	.entry-title {
-		padding-bottom: 10px;
-		border-bottom: 1px solid #ddd;
+		margin-bottom: 20px;
+	}
+	.single-content {
+		padding: $gap-tiny;
 	}
 	.single-content, .comments {
 		margin-bottom: $gap-big;
@@ -95,5 +96,21 @@ body.single .post {
 	}
 	footer {
 		margin-top: 50px;
+	}
+}
+
+@media (max-width: 767px) {
+	body.single .post {
+		.single-content {
+			padding: 2.5vw;
+			figure {
+				margin-left: -7.5vw;
+				margin-right: -7.5vw;
+				max-width: 100vw;
+				.wp-caption-text {
+					text-align: center;
+				}
+			}
+		}
 	}
 }

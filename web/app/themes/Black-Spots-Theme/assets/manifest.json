@@ -18,6 +18,11 @@
         "scripts/customizer.js"
       ]
     },
+    "customizer-basic.js": {
+      "files": [
+        "scripts/customizer-basic.js"
+      ]
+    },
     "customizer-controls.js": {
       "files": [
         "scripts/customizer-controls.js"

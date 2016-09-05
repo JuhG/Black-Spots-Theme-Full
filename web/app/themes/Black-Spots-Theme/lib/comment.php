@@ -7,14 +7,12 @@ class Black_Spots_Comment extends \Walker_Comment {
 	var $tree_type = 'comment';
 	var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
 
-	// constructor – wrapper for the comments list
 	function __construct() { ?>
 
 		<section class="comments-list">
 
 	<?php }
 
-	// start_lvl – wrapper for child comments list
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$GLOBALS['comment_depth'] = $depth + 2; ?>
 		
@@ -22,7 +20,6 @@ class Black_Spots_Comment extends \Walker_Comment {
 
 	<?php }
 
-	// end_lvl – closing wrapper for child comments list
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$GLOBALS['comment_depth'] = $depth + 2; ?>
 
@@ -30,7 +27,6 @@ class Black_Spots_Comment extends \Walker_Comment {
 
 	<?php }
 
-	// start_el – HTML for comment template
 	function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
 		$depth++;
 		$GLOBALS['comment_depth'] = $depth;
@@ -47,7 +43,7 @@ class Black_Spots_Comment extends \Walker_Comment {
 
 		<article <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 
-			<figure class="gravatar"><?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'], '', 'Author’s gravatar' ); ?></figure>
+			<figure class="gravatar"><?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'], '', 'Author\'s gravatar' ); ?></figure>
 
 			<div class="comment-meta post-meta" role="complementary">
 
@@ -88,14 +84,12 @@ class Black_Spots_Comment extends \Walker_Comment {
 
 	<?php }
 
-	// end_el – closing HTML for comment template
 	function end_el(&$output, $comment, $depth = 0, $args = array() ) { ?>
 
 		</article>
 
 	<?php }
 
-	// destructor – closing wrapper for the comments list
 	function __destruct() { ?>
 
 		</section>

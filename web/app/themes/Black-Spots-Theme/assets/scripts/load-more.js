@@ -28,35 +28,29 @@ jQuery(function($){
 		query: bsloadmore.query
 	};
 
-	$(window).load(function () {
-		setTimeout( function () {
-			cache_next_page();
-		}, 1000);
-	});
-
-	$button.click(function (e) {
-		e.preventDefault();
-		if ( loading ) return;
-		loading = true;
-		$link.text( loadingText );
-
-		get_next_page(function ( data ) {
-			$list.append( data ).append( $nav );
-			$('.type-post').addClass('post');
-			window.history.pushState( null, null, get_next_url( page ) );
-			page++;
-			$link.text( text ).attr( 'href', get_next_url( page ) )
-		});
-
-	});
+	/**
+	 * Necessary functions
+	 */
 
 	function get_next_url ( p ) {
 		return bsloadmore.next_link.replace( '9999', p );
 	}
 
+	function cache_next_page () {
+		cache_version = page;
+		get_next_page(function ( data ) {
+			if ( data ) {
+				next_page = data;
+				cached = true;
+			} else {
+				$button.remove();
+			}
+		});
+	}
+
 	function get_next_page ( cb ) {
 
-		if ( cached && cache_version == page ) {
+		if ( cached && cache_version === page ) {
 			cb( next_page );
 			cached = false;
 			loading = false;
@@ -79,16 +73,30 @@ jQuery(function($){
 		});
 	}
 
-	function cache_next_page () {
-		cache_version = page;
+	/**
+	 * Loading the next page automatically and on button click
+	 */
+
+	$(window).load(function () {
+		setTimeout( function () {
+			cache_next_page();
+		}, 1000);
+	});
+
+	$button.click(function (e) {
+		e.preventDefault();
+		if ( loading ) return;
+		loading = true;
+		$link.text( loadingText );
+
 		get_next_page(function ( data ) {
-			if ( data ) {
-				next_page = data;
-				cached = true;
-			} else {
-				$button.remove();
-			}
+			$list.append( data ).append( $nav );
+			$('.type-post').addClass('post');
+			window.history.pushState( null, null, get_next_url( page ) );
+			page++;
+			$link.text( text ).attr( 'href', get_next_url( page ) );
 		});
-	}
+
+	});
 
 });

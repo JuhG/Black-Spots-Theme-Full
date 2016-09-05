@@ -58,10 +58,21 @@ a, .button {
 
 .button.button-secondary {
 	line-height: 1;
-	padding: 2px 5px;
+	padding: 4px 5px;
 	margin: 0 2px;
 	border: 1px solid;
 	text-transform: uppercase;
+	&, &:hover, &:focus {
+		a {
+			border-color: transparent !important;
+			&:after {
+				border-color: transparent !important;
+			}
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
 }
 [rel="category tag"], [rel="tag category"], [rel="category"] {
 	@extend .button;

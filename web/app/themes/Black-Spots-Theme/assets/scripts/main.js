@@ -34,7 +34,6 @@
          * Fluidbox support to all image by default
          */
         $('.fluidbox').closest('a').fluidbox();
-        // var $g = $('.owl-carousel');
 
         $('.gallery').owlCarousel({
           singleItem: true,
@@ -83,7 +82,7 @@
                 webkitTransform: -tr
               });
             }
-          }
+          };
           $win.on('scroll', lodashThrottle(headerParallax, 10));
           headerParallax();
         }

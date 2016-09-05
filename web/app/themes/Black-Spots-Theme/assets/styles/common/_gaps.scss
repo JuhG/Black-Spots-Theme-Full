@@ -18,6 +18,7 @@ $gap-small-minus: calc(-20px - 1vw);
 // 1920: 19.6
 // 320: 11.6
 $gap-tiny: calc(10px - -0.5vw);
+$gap-tiny-minus: calc(-10px - 0.5vw);
 
 %line-top {
 	padding-top: $gap-small;
