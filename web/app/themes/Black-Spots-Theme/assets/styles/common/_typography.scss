@@ -14,6 +14,10 @@ body {
 	line-height: 1.25;
 	a {
 		font-weight: 300;
+        color: inherit !important;
+        &:hover {
+            color: inherit !important;
+        }
 	}
 }
 

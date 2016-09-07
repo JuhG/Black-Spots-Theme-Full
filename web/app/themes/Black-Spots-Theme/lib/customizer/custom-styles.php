@@ -6,13 +6,16 @@
 function get_final_customizer_css_array () {
 	return array(
 		'bg' =>  array(
-			'body' => 'background-color'
+			'body' => 'background-color',
+            '.background-wrapper' => 'background-color'
 		),
 		'post-bg' => array(
 			'body:not(.single) .post' => 'background-color',
 			'.single-content'   	  => 'background-color',
 			'.header-container' 	  => 'background-color',
 			'h5.widget-title'  	      => 'background-color',
+            '.woocommerce div.product .woocommerce-tabs .panel' => 'background-color',
+            '.mch-widget' => 'background-color'
 		),
 		'text' => array(
 			'body'            => 'color',
@@ -21,11 +24,6 @@ function get_final_customizer_css_array () {
 			'h3'              => 'color',
 			'h4'              => 'color',
 			'h5'              => 'color',
-			'h1 a'            => 'color',
-			'h2 a'            => 'color',
-			'h3 a'            => 'color',
-			'h4 a'            => 'color',
-			'h5 a'            => 'color',
 			'.separator'      => 'color',
 			'h5.widget-title' => 'color',
 			'.master-title'   => 'color',
@@ -34,7 +32,7 @@ function get_final_customizer_css_array () {
 		'alt-text' => array(
 			'.button.button-primary'                    => 'color',
 			'.search-form .search-submit'               => 'color',
-			'.footer-copy-container'                    => 'color',
+			'.footer-copy-container'                    => array('color', 'border-color'),
 			'.navbar-toggle .icon-bar'                  => 'color',
 			'.comment-form input[type=submit]' 			=> 'color',
 			'.nav-next'                                 => 'color',
@@ -42,11 +40,13 @@ function get_final_customizer_css_array () {
 			'.owl-theme .owl-controls .owl-page span'   => 'color',
 			'.owl-theme .owl-controls .owl-buttons div' => 'color',
 			'.calendar_wrap table tbody a'              => 'color',
-			'.if-author'                                => 'color'
+			'.if-author'                                => 'color',
+            '.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button' => 'color'
+
 		),
 		'brand' => array(
-			'a'                                         => array( 'color', 'border-color' ),
-			'a:hover'                           		=> array( 'color', 'border-color' ),
+			'a:not(.button):not(.button-primary)'       => array( 'color', 'border-color' ),
+			'a:not(.button):not(.button-primary):hover' => array( 'color', 'border-color' ),
 			'.button.button-secondary'                  => array( 'color', 'border-color' ),
 			'.title-container'                          => 'border-color',
 			'.button.button-primary'                    => 'background-color',
@@ -62,37 +62,8 @@ function get_final_customizer_css_array () {
 			'.if-author'                                => 'background-color',
 			'blockquote'                                => 'border-color',
 			'hr'                                        => 'border-color',
+            '.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button' => 'background-color'
 		)
 
 	);
-}
-
-/**
- * Some paddings are different, if the postBg and bg colors are different
- * We don't need this check in the editor, since there's no post liting there
- */
-function check_if_bg_and_postbg_different ( $css ) {
-	$colors = get_final_colors();
-	if ( $colors['bg'] === $colors['post-bg'] ) {
-		$css .= "body:not(.single) .post .entry-content {
-			padding-left: 0;
-			padding-right: 0;
-			padding-top: 0;
-		}
-		body:not(.single) .post .entry-image {
-			padding-bottom: 20px;
-		}
-		body.single .post .single-content {
-			padding: 0;
-		}
-		body.single .post .single-content figure {
-			margin-left: -5vw;
-			margin-right: -5vw;
-		}
-		.owl-carousel {
-			margin-left: -5vw;
-			margin-right: -5vw;
-		}";
-	}
-	return $css;
 }

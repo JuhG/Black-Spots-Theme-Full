@@ -14,22 +14,6 @@
 
 		<div class="nav-container">
 
-			<?php
-			/*
-			// Social media icons + search button
-			// Disabled at the moment
-
-			<div class="header-search">
-				Search
-			</div>
-
-			<div class="header-socials">
-				Facebook
-				Twitter
-			</div>
-			*/
-			?>
-
 			<?php if (has_nav_menu('primary_navigation')): ?>
 
 				<nav class="nav-primary">
@@ -49,7 +33,7 @@
 		</div>
 
 		<div class="title-container">
-			
+
 			<div class="header-main">
 
 				<?php if ( $icon = get_option( 'site_icon' ) ): ?>
@@ -77,13 +61,13 @@
 				<?php else: ?>
 					</p>
 				<?php endif ?>
-				
+
 			</div>
 
 		</div>
-	
+
 	</div>
-		
+
 	<div class="header-image container">
 
 		<?php
@@ -91,12 +75,12 @@
 		 * Custom header image
 		 */
 
-		if ( is_singular() && has_post_thumbnail() ): ?>
+		if ( is_singular() && has_post_thumbnail() && ! is_singular('product') ): ?>
             <?php the_post_thumbnail( 'full_screen' ); ?>
 		<?php elseif ( $img = get_header_image() ): ?>
 			<img src="<?php echo $img; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
 		<?php endif; ?>
-		
+
 	</div>
 
 </header>

@@ -60,10 +60,10 @@
 }
 
 .comment {
-	margin-top: $gap-tiny;
+	margin-top: $gap-small;
 	margin-left: $gap-tiny;
 	&.depth-1 {
-		padding-bottom: $gap-tiny;
+		padding-bottom: $gap-small;
 		margin-left: 0;
 	}
 	.gravatar {
@@ -77,10 +77,9 @@
 	}
 	article {
 		padding-left: $gap-tiny;
-		border-left: 1px solid #ddd;
 	}
 	.if-author {
-		padding: 3px;
+		padding: 3px 5px;
 		border-radius: 5px;
 		text-transform: uppercase;
 		font-family: $font-family-sans-serif;

@@ -25,7 +25,7 @@ body#tinymce {
 		padding-top: $gap-small;
 		margin-bottom: $gap-small;
 	}
-	p {
+	p, blockquote {
 		line-height: 2;
 		margin-bottom: $gap-small;
 	}

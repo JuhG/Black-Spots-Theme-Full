@@ -1,5 +1,5 @@
 <?php
-use Roots\Sage\Comment;
+use BlackSpots\Comment;
 
 if (post_password_required()) {
   return;
@@ -8,14 +8,13 @@ if (post_password_required()) {
 
 <section id="comments" class="comments">
   <?php if (have_comments()) : ?>
-    <h3 class="comments-title"><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'black_spots'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>'); ?></h3>
+    <h3 class="comments-title"><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'black-spots-theme'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>'); ?></h3>
 
     <ol class="comment-list">
       <?php wp_list_comments(array(
-        // 'avatar_size' => 64,
         'style' => 'ol',
         'short_ping' => true,
-        'walker' => new Comment\Black_Spots_Comment()
+        'walker' => new Comment()
       )); ?>
     </ol>
 
@@ -23,19 +22,19 @@ if (post_password_required()) {
       <nav>
         <ul class="pager">
           <?php if (get_previous_comments_link()) : ?>
-            <li class="previous"><?php previous_comments_link(__('&larr; Older comments', 'black_spots')); ?></li>
+            <li class="previous"><?php previous_comments_link(__('&larr; Older comments', 'black-spots-theme')); ?></li>
           <?php endif; ?>
           <?php if (get_next_comments_link()) : ?>
-            <li class="next"><?php next_comments_link(__('Newer comments &rarr;', 'black_spots')); ?></li>
+            <li class="next"><?php next_comments_link(__('Newer comments &rarr;', 'black-spots-theme')); ?></li>
           <?php endif; ?>
         </ul>
       </nav>
     <?php endif; ?>
-  <?php endif; // have_comments() ?>
+  <?php endif; ?>
 
   <?php if (!comments_open() && get_comments_number() != '0' && post_type_supports(get_post_type(), 'comments')) : ?>
     <div class="alert alert-warning">
-      <?php _e('Comments are closed.', 'black_spots'); ?>
+      <?php _e('Comments are closed.', 'black-spots-theme'); ?>
     </div>
   <?php endif; ?>
 

@@ -1,8 +1,15 @@
 .header-container {
+    z-index: 999;
 }
 
 .header-image, .header-container {
 	padding: 0;
+}
+
+body.header-full {
+    .header-image, .header-container {
+        width: 100%;
+    }
 }
 
 .title-container, .nav-container {
@@ -12,6 +19,45 @@
 .header-main {
 	display: flex;
     align-items: center;
+}
+
+body.header-sticky {
+    .header-container {
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
+    .header-image {
+        margin-top: 50px;
+    }
+}
+
+.banner {
+    overflow: hidden;
+}
+
+.header-image {
+    text-align: center;
+}
+
+body.header-parallax {
+    .header-image img {
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.background-wrapper {
+    padding-top: $gap-big;
+}
+
+body:not(.header-parallax) {
+    .background-wrapper {
+        background-color: transparent !important;
+    }
 }
 
 .master-title {
@@ -25,9 +71,9 @@
 		letter-spacing: 5px;
 		font-family: $font-family-sans-serif;
     	display: block;
-		color: inherit;
+		color: inherit !important;
     	&:hover {
-    		color: inherit;
+    		color: inherit !important;
     	}
 	}
 }
@@ -60,23 +106,6 @@
 	}
 	img {
 		display: block;
-	}
-}
-
-.banner {
-	margin-bottom: $gap-big;
-	overflow: hidden;
-}
-
-.header-image {
-	text-align: center;
-	overflow: hidden;
-	body.header-parallax & {
-		position: fixed;
-		left: 0;
-		top: 50px;
-	}
-	body.header-parallax & img {
 	}
 }
 

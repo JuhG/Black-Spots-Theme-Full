@@ -1,23 +1,23 @@
 <?php
 
-namespace Roots\Sage\Wrapper;
+namespace BlackSpots\Wrapper;
 
 /**
  * Theme wrapper
  *
- * @link https://roots.io/sage/docs/theme-wrapper/
+ * @link https://roots.io/bs/docs/theme-wrapper/
  * @link http://scribu.net/wordpress/theme-wrappers.html
  */
 
 function template_path() {
-  return SageWrapping::$main_template;
+  return ThemeWrapping::$main_template;
 }
 
 function sidebar_path() {
-  return new SageWrapping('templates/sidebar.php');
+  return new ThemeWrapping('templates/sidebar.php');
 }
 
-class SageWrapping {
+class ThemeWrapping {
   // Stores the full path to the main template file
   public static $main_template;
 
@@ -41,7 +41,7 @@ class SageWrapping {
   }
 
   public function __toString() {
-    $this->templates = apply_filters('sage/wrap_' . $this->slug, $this->templates);
+    $this->templates = apply_filters('bs/wrap_' . $this->slug, $this->templates);
     return locate_template($this->templates);
   }
 
@@ -58,7 +58,7 @@ class SageWrapping {
       self::$base = false;
     }
 
-    return new SageWrapping();
+    return new ThemeWrapping();
   }
 }
-add_filter('template_include', [__NAMESPACE__ . '\\SageWrapping', 'wrap'], 109);
+add_filter('template_include', [__NAMESPACE__ . '\\ThemeWrapping', 'wrap'], 109);

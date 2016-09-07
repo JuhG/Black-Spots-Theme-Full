@@ -1,105 +1,105 @@
 <?php
 
-namespace Roots\Sage\Comment;
-use Roots\Sage\Extras;
+namespace BlackSpots;
+use BlackSpots\Extras;
 
-class Black_Spots_Comment extends \Walker_Comment {
-	var $tree_type = 'comment';
-	var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
+class Comment extends \Walker_Comment {
+    var $tree_type = 'comment';
+    var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
 
-	function __construct() { ?>
+    function __construct() { ?>
 
-		<section class="comments-list">
+        <section class="comments-list">
 
-	<?php }
+    <?php }
 
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$GLOBALS['comment_depth'] = $depth + 2; ?>
-		
-		<section class="child-comments comments-list">
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $GLOBALS['comment_depth'] = $depth + 2; ?>
 
-	<?php }
+        <section class="child-comments comments-list">
 
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$GLOBALS['comment_depth'] = $depth + 2; ?>
+    <?php }
 
-		</section>
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $GLOBALS['comment_depth'] = $depth + 2; ?>
 
-	<?php }
+        </section>
 
-	function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
-		$depth++;
-		$GLOBALS['comment_depth'] = $depth;
-		$GLOBALS['comment'] = $comment;
-		$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' ); 
+    <?php }
 
-		if ( 'article' == $args['style'] ) {
-			$tag = 'article';
-			$add_below = 'comment';
-		} else {
-			$tag = 'article';
-			$add_below = 'comment';
-		} ?>
+    function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
+        $depth++;
+        $GLOBALS['comment_depth'] = $depth;
+        $GLOBALS['comment'] = $comment;
+        $parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' );
 
-		<article <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
+        if ( 'article' == $args['style'] ) {
+            $tag = 'article';
+            $add_below = 'comment';
+        } else {
+            $tag = 'article';
+            $add_below = 'comment';
+        } ?>
 
-			<figure class="gravatar"><?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'], '', 'Author\'s gravatar' ); ?></figure>
+        <article <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 
-			<div class="comment-meta post-meta" role="complementary">
+            <figure class="gravatar"><?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'], '', 'Author\'s gravatar' ); ?></figure>
 
-				<p class="comment-author fn">
-					<?php if (get_comment_author_url()): ?>
-						<a class="comment-author-link" href="<?php comment_author_url(); ?>" itemprop="author"><?php comment_author(); ?></a>
-					<?php else: ?>
-						<?php comment_author(); ?>
-					<?php endif; ?>
-					<span class="if-author"><?php _e('Author', 'black_spots') ?></span>
-				</p>
+            <div class="comment-meta post-meta" role="complementary">
 
-				<?php echo Extras\convert_to_time_ago( 'get_comment_time', 'comment-meta-item' ); ?>
+                <p class="comment-author fn">
+                    <?php if (get_comment_author_url()): ?>
+                        <a class="comment-author-link" href="<?php comment_author_url(); ?>" itemprop="author"><?php comment_author(); ?></a>
+                    <?php else: ?>
+                        <?php comment_author(); ?>
+                    <?php endif; ?>
+                    <span class="if-author"><?php _e('Author', 'black-spots-theme') ?></span>
+                </p>
 
-				<?php edit_comment_link('<p class="comment-meta-item">Edit this comment</p>','',''); ?>
+                <?php echo Extras\convert_to_time_ago( 'get_comment_time', 'comment-meta-item' ); ?>
 
-				<?php if ($comment->comment_approved == '0') : ?>
-					<p class="comment-meta-item">Your comment is awaiting moderation.</p>
-				<?php endif; ?>
+                <?php edit_comment_link('<p class="comment-meta-item">Edit this comment</p>','',''); ?>
 
-			</div>
+                <?php if ($comment->comment_approved == '0') : ?>
+                    <p class="comment-meta-item">Your comment is awaiting moderation.</p>
+                <?php endif; ?>
 
-			<div class="comment-content post-content" itemprop="text">
+            </div>
 
-				<div class="comment-reply-wrapper">
-					<?php comment_reply_link(array_merge( $args, array(
-						'add_below' => $add_below,
-						'depth'     => $depth,
-						'max_depth' => $args['max_depth'],
-					)), $comment->comment_ID) ?>
-				</div>
+            <div class="comment-content post-content" itemprop="text">
 
-				<div class="comment-text">
-					<?php comment_text() ?>
-				</div>
+                <div class="comment-reply-wrapper">
+                    <?php comment_reply_link(array_merge( $args, array(
+                        'add_below' => $add_below,
+                        'depth'     => $depth,
+                        'max_depth' => $args['max_depth'],
+                    )), $comment->comment_ID) ?>
+                </div>
 
-			</div>
+                <div class="comment-text">
+                    <?php comment_text() ?>
+                </div>
 
-	<?php }
+            </div>
 
-	function end_el(&$output, $comment, $depth = 0, $args = array() ) { ?>
+    <?php }
 
-		</article>
+    function end_el(&$output, $comment, $depth = 0, $args = array() ) { ?>
 
-	<?php }
+        </article>
 
-	function __destruct() { ?>
+    <?php }
 
-		</section>
-	
-	<?php }
+    function __destruct() { ?>
+
+        </section>
+
+    <?php }
 
 }
 
 function bs_remove_url_field ( $fields ) {
-	$fields['url'] = '';
-	return $fields;
+    $fields['url'] = '';
+    return $fields;
 }
 add_filter( 'comment_form_default_fields', __NAMESPACE__ . '\\bs_remove_url_field' );

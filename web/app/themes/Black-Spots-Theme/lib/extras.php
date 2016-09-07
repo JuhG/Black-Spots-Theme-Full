@@ -1,8 +1,8 @@
 <?php
 
-namespace Roots\Sage\Extras;
+namespace BlackSpots\Extras;
 
-use Roots\Sage\Setup;
+use BlackSpots\Setup;
 
 /**
  * Add <body> classes
@@ -18,6 +18,12 @@ function body_class($classes) {
   // Add class if sidebar is active
   if (Setup\display_sidebar()) {
     $classes[] = 'sidebar-primary';
+    if ( Setup\alternative_template() ) {
+        $classes[] = 'sidebar-alternative';
+    }
+    if ( get_theme_mod('bs_sb_left') ) {
+        $classes[] = 'sidebar-left';
+    }
   } else {
     $classes[] = 'no-sidebar';
   }
@@ -27,14 +33,30 @@ function body_class($classes) {
   }
 
   if ( $pos = get_theme_mod( 'header_position' ) ) {
-    $classes[] = 'header-' . $pos;
+    $classes[] = 'header-' . strtolower( $pos );
   }
 
-  // TODO: actual check
-  // if ( get_theme_mod( 'header_parallax' ) ) {
-    // $classes[] = 'header-parallax';
-    // $classes[] = 'header-parallax-fade';
-  // }
+  if ( $width = get_theme_mod( 'header_width' ) ) {
+    $classes[] = 'header-' . strtolower( $width );
+  }
+
+  /**
+   *
+   */
+  $colors = get_final_colors();
+  if ( $colors['bg'] === $colors['post-bg'] ) {
+    $classes[] = 'bg-no-diff';
+  }
+
+  /**
+   * Parallax classes
+   */
+  if ( get_theme_mod( 'bs_header_parallax' ) ) {
+    $classes[] = 'header-parallax';
+    if ( get_theme_mod( 'bs_header_parallax_fade' ) ) {
+        $classes[] = 'header-parallax-fade';
+    }
+  }
 
   return $classes;
 }
@@ -57,7 +79,7 @@ add_filter('pre_get_posts', __NAMESPACE__ . '\\SearchFilter');
 
 /**
  * Changing the date format to a twitterlike format
- */ 
+ */
 function convert_to_time_ago( $date_function, $classes = array() ) {
 
   $datetime = call_user_func( $date_function, 'c', true );

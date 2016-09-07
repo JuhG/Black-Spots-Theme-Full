@@ -3,30 +3,17 @@
 /**
  * Theme constants
  */
-define( 'BS_VERSION', 0.2 );
-define( 'BS_PREMIUM', false );
+define( 'BS_VERSION', '0.6.0' );
+define( 'BS_PREMIUM', true );
 
-/**
- * Sage includes
- *
- * The $sage_includes array determines the code library included in your theme.
- * Add or remove files to the array as needed. Supports child theme overrides.
- *
- * Please note that missing files will produce a fatal error.
- *
- * @link https://github.com/roots/sage/pull/1042
- */
-$sage_includes = [
+$theme_includes = [
   'lib/assets.php',
-  'lib/demo/basic.php',
   'lib/data/color-schemes.php',
   'lib/customizer/custom-basic.php',
   'lib/customizer/custom-header-basic.php',
   'lib/customizer/custom-styles.php',
   'lib/customizer/custom-color-basic.php',
-  // 'lib/premium/custom.php',
-  // 'lib/premium/custom-color.php',
-  // 'lib/premium/custom-header.php',
+  'lib/customizer/custom-text.php',
   'lib/extras.php',     // Custom functions
   'lib/setup.php',      // Theme setup
   'lib/titles.php',     // Page titles
@@ -38,9 +25,20 @@ $sage_includes = [
   'lib/ext/wp_bootstrap_navwalker.php'
 ];
 
-foreach ($sage_includes as $file) {
+if ( BS_PREMIUM ) {
+    $theme_includes[] = 'lib/premium/custom.php';
+    $theme_includes[] = 'lib/premium/custom-color.php';
+    $theme_includes[] = 'lib/premium/custom-header.php';
+    $theme_includes[] = 'lib/premium/custom-sidebar.php';
+}
+
+if ( get_option( 'bs_demo' ) ) {
+    $theme_includes[] = 'lib/demo.php';
+}
+
+foreach ($theme_includes as $file) {
   if (!$filepath = locate_template($file)) {
-    trigger_error(sprintf(__('Error locating %s for inclusion', 'black_spots'), $file), E_USER_ERROR);
+    trigger_error(sprintf(__('Error locating %s for inclusion', 'black-spots-theme'), $file), E_USER_ERROR);
   }
 
   require_once $filepath;
