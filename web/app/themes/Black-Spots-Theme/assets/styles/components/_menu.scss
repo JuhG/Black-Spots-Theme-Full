@@ -2,7 +2,7 @@
 	z-index: 2;
 	position: absolute;
 	bottom: 0;
-	right: 0;
+	right: $gap-tiny;
 	margin-bottom: 8px;
 }
 
@@ -10,6 +10,7 @@
 	z-index: 1;
 	a {
 		font-family: $font-family-sans-serif;
+        font-weight: 400;
 	}
 }
 
@@ -75,7 +76,7 @@
 	    top: 11px;
 	    left: -6px;
 	}
-	
+
 }
 
 @media (max-width: 767px) {

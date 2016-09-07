@@ -1,0 +1,13 @@
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.navbar-toggle {
+	left: 12px;
+}
+
+blockquote {
+	border-left: none;
+	border-right: 5px solid;
+}

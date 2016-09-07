@@ -114,3 +114,30 @@ body.single .post {
 		}
 	}
 }
+
+body.bg-no-diff {
+    &:not(.single) .post .entry-content {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 0;
+        }
+    &:not(.single) .post .entry-image {
+        padding-bottom: 20px;
+    }
+    &.single .post .single-content {
+        padding: 0;
+    }
+    &.single .post .single-content figure, .owl-carousel {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    body.bg-no-diff {
+        &.single .post .single-content figure, .owl-carousel {
+            margin-left: -5vw;
+            margin-right: -5vw;
+        }
+    }
+}

@@ -1,8 +1,5 @@
 #footer {
 	margin-top: $gap-big;
-	a {
-		text-decoration: underline;
-	}
 }
 
 .footer-widgets {
@@ -20,5 +17,21 @@
 }
 
 .footer-copy-container {
-	padding: 20px 0;
+    padding-top: $gap-tiny;
+	padding-bottom: $gap-small;
+    a {
+        border-bottom: 2px solid;
+        color: inherit !important;
+        border-color: inherit !important;
+        &:hover, &:focus {
+            color: inherit !important;
+            border-color: inherit !important;
+        }
+    }
+    .top {
+        margin-bottom: $gap-tiny;
+    }
+    .bottom {
+        font-size: $font-size-small;
+    }
 }

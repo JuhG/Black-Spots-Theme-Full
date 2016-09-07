@@ -1,127 +1,98 @@
-/* ========================================================================
- * DOM-based Routing
- * Based on http://goo.gl/EUTi53 by Paul Irish
- *
- * Only fires on body classes that match. If a body class contains a dash,
- * replace the dash with an underscore when adding it to the object below.
- *
- * .noConflict()
- * The routing is enclosed within an anonymous function so that you can
- * always reference jQuery with $, even when in .noConflict() mode.
- * ======================================================================== */
-
 (function($) {
-  // global variables
-  var $body = $('body');
-  var $win = $(window);
-  var $header = $('.banner');
-  var headerHeight = $header.height();
-  var $headerImage = $('.header-image img');
-  var $headerTop = $('.header-container');
-  var st, pos, tr;
-  var opacity = 1;
 
-  // Use this variable to set up the common and page specific functions. If you
-  // rename this variable, you will also need to rename the namespace below.
-  var Sage = {
-    // All pages
-    'common': {
-      init: function() {
-        // JavaScript to be fired on all pages
-      },
-      finalize: function() {
+    /**
+     * Global variables
+     */
+    var $body = $('body');
+    var $win = $(window);
+    var $header = $('.banner');
+    var headerHeight = $header.height();
+    var $headerTop = $header.find('.header-container');
+    var $headerBottom = $header.find('.header-image');
+    var $headerImage = $headerBottom.find('img');
+    var st, pos, tr;
+    var opacity = 1;
+
+    $(document).ready(function () {
+
         /**
          * Fluidbox support to all image by default
          */
         $('.fluidbox').closest('a').fluidbox();
 
+        /**
+         * Owl carousel init
+         */
         $('.gallery').owlCarousel({
-          singleItem: true,
-          autoHeight : true,
-          rewindSpeed: 200,
-          itemsScaleUp: true,
-          navigation: true,
-          rewindNav: false,
-          navigationText: [
-            "<i class='dashicons dashicons-arrow-left-alt2'></i>",
-            "<i class='dashicons dashicons-arrow-right-alt2'></i>"
-          ],
+            singleItem: true,
+            autoHeight : true,
+            rewindSpeed: 200,
+            itemsScaleUp: true,
+            navigation: true,
+            rewindNav: false,
+            navigationText: [
+                "<i class='dashicons dashicons-arrow-left-alt2'></i>",
+                "<i class='dashicons dashicons-arrow-right-alt2'></i>"
+            ],
         });
 
         /**
-         *
+         * Adding a special classname to all links with images inside
          */
-        function linksWithImages () {
-          var $as = $('a, .button');
-          $as.each(function () {
-            var $a = $(this);
-            if ( $a.find('img, picture').length ) $a.addClass('image-inside');
-          });
+        var linksWithImages = function () {
+            var $as = $('a, .button');
+            $as.each(function () {
+                var $a = $(this);
+                if ( $a.find('img, picture').length ) $a.addClass('image-inside');
+            });
         }
         linksWithImages();
+
+        /**
+         * Sticky headder
+         */
+        if ( $body.is('.header-sticky') ) {
+            var stickyHeader = function () {
+                $headerBottom.css('margin-top', $headerTop.height() );
+            }
+            stickyHeader();
+            $win.on('resize', lodashThrottle(stickyHeader, 10));
+        }
 
         /**
          * Parallax
          */
         if ( $body.is('.header-parallax') ) {
-          $header.css('min-height', $headerImage.height());
-          headerHeight = $header.height();
-          var headerParallax = function (e) {
-            st = document.body.scrollTop;
-            pos = -1 * ( st / 2 );
-            tr = 'translateY('+ pos +'px)';
-            if ( $body.is('.header-parallax-fade') ) opacity = 1.2 - st / headerHeight;
-            $headerImage.css({
-              transform: tr,
-              webkitTransform: tr,
-              opacity: opacity
-            });
-            if ( $body.is('.header-static') ) {
-              $headerTop.css({
-                transform: -tr,
-                webkitTransform: -tr
-              });
-            }
-          };
-          $win.on('scroll', lodashThrottle(headerParallax, 10));
-          headerParallax();
+            var headerParallax = function (e) {
+                $headerImage.css({
+                    width: $headerBottom.width()
+                });
+                $headerBottom.css({
+                    height: $headerImage.height()
+                });
+                headerHeight = $header.height();
+                st = document.body.scrollTop;
+                pos = st / 2;
+                posMinus = -1 * pos;
+                tr = 'translateY('+ pos +'px)';
+                trMinus = 'translateY('+ posMinus +'px)';
+                if ( $body.is('.header-parallax-fade') ) opacity = Math.max( 1 - st / headerHeight, 0 );
+                $headerImage.css({
+                    transform: trMinus,
+                    webkitTransform: trMinus,
+                    opacity: opacity
+                });
+                if ( $body.is('.header-static') ) {
+                    $headerTop.css({
+                        transform: tr,
+                        webkitTransform: tr
+                    });
+                }
+            };
+            $win.on('scroll', lodashThrottle(headerParallax, 10));
+            $win.on('resize', lodashThrottle(headerParallax, 10));
+            headerParallax();
         }
-
-      }
-    }
-  };
-
-  // The routing fires all common scripts, followed by the page specific scripts.
-  // Add additional events for more control over timing e.g. a finalize event
-  var UTIL = {
-    fire: function(func, funcname, args) {
-      var fire;
-      var namespace = Sage;
-      funcname = (funcname === undefined) ? 'init' : funcname;
-      fire = func !== '';
-      fire = fire && namespace[func];
-      fire = fire && typeof namespace[func][funcname] === 'function';
-
-      if (fire) {
-        namespace[func][funcname](args);
-      }
-    },
-    loadEvents: function() {
-      // Fire common init JS
-      UTIL.fire('common');
-
-      // Fire page-specific init JS, and then finalize JS
-      $.each(document.body.className.replace(/-/g, '_').split(/\s+/), function(i, classnm) {
-        UTIL.fire(classnm);
-        UTIL.fire(classnm, 'finalize');
-      });
-
-      // Fire common finalize JS
-      UTIL.fire('common', 'finalize');
-    }
-  };
-
-  // Load Events
-  $(document).ready(UTIL.loadEvents);
+    });
 
 })(jQuery); // Fully reference jQuery after this point.

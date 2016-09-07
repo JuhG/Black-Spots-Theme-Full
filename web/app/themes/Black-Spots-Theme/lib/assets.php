@@ -1,6 +1,6 @@
 <?php
 
-namespace Roots\Sage\Assets;
+namespace BlackSpots\Assets;
 
 /**
  * Get paths for assets
@@ -14,6 +14,7 @@ class JsonManifest {
     } else {
       $this->manifest = [];
     }
+
   }
 
   public function get() {

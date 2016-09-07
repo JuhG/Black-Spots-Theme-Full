@@ -13,11 +13,11 @@ function bs_mce_toolbars( $settings ) {
      * Removing H1 and H6
      */
     $block_formats_arr = array(
-        __( 'Paragraph', 'black_spots' )    => 'p',
-        __( 'Heading 2', 'black_spots' )    => 'h2',
-        __( 'Heading 3', 'black_spots' )    => 'h3',
-        __( 'Heading 4', 'black_spots' )    => 'h4',
-        __( 'Preformatted', 'black_spots' ) => 'pre',
+        __( 'Paragraph', 'black-spots-theme' )    => 'p',
+        __( 'Heading 2', 'black-spots-theme' )    => 'h2',
+        __( 'Heading 3', 'black-spots-theme' )    => 'h3',
+        __( 'Heading 4', 'black-spots-theme' )    => 'h4',
+        __( 'Preformatted', 'black-spots-theme' ) => 'pre',
     );
 
     // Convert the array to strings
@@ -31,26 +31,26 @@ function bs_mce_toolbars( $settings ) {
      */
     $style_formats = array(
         array(
-            'title'   => __( 'Cite', 'black_spots' ),
+            'title'   => __( 'Cite', 'black-spots-theme' ),
             'block'  => 'cite'
         ),
         array(
-            'title'   => __( 'Two columns', 'black_spots' ),
+            'title'   => __( 'Two columns', 'black-spots-theme' ),
             'block'  => 'p',
             'classes' => 'columns-2'
         ),
         array(
-            'title'   => __( 'Three columns', 'black_spots' ),
+            'title'   => __( 'Three columns', 'black-spots-theme' ),
             'block'  => 'p',
             'classes' => 'columns-3'
         ),
         array(
-            'title' => __( 'Button Primary', 'black_spots' ),
+            'title' => __( 'Button Primary', 'black-spots-theme' ),
             'block' => 'div',
             'classes' => array( 'button', 'button-primary' )
         ),
         array(
-            'title' => __( 'Button Secondary', 'black_spots' ),
+            'title' => __( 'Button Secondary', 'black-spots-theme' ),
             'block' => 'div',
             'classes' => array( 'button', 'button-secondary' )
         ),

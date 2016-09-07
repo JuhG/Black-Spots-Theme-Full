@@ -1,78 +1,26 @@
+// bsStyleList is a global object
+
 (function($, api) {
 
-  var current = {
-  	bg: '',
-  	postBg: '',
-  	text: '',
-  	altText: '',
-  	brand: ''
-  };
 
-  api('bg', function(value) {
-    value.bind(function(to) {
-    	changeBg( to );
+    $.each(bsStyleList, function ( type, styles ) {
+        api(type, function (value) {
+            value.bind(function (to) {
+                $.each(styles, function ( selector, attrs ) {
+                    var arr = [];
+                    if ( ! $.isArray( attrs ) ) {
+                        arr.push( attrs );
+                    } else arr = attrs;
+                    arr.forEach(function ( attr ) {
+                        $(selector).css(attr, to);
+                    });
+                });
+                if ( type === 'bg' || type === 'post-bg' ) {
+                    checkBgAndPostBg();
+                }
+            });
+        });
     });
-  });
-  api('post-bg', function(value) {
-    value.bind(function(to) {
-    	changePostBg( to );
-    });
-  });
-  api('text', function(value) {
-    value.bind(function(to) {
-    	changeText( to );
-    });
-  });
-  api('alt-text', function(value) {
-    value.bind(function(to) {
-    	changeAltText( to );
-    });
-  });
-  api('brand', function(value) {
-    value.bind(function(to) {
-			changeBrand( to );
-    });
-  });
-
-  function changeBg ( to ) {
-			$('body').css('background-color', to);
-			checkBgAndPostBg();
-			current.bg = to;
-  }
-
-  function changePostBg ( to ) {
-			$('body:not(.single) .post, .single-content, .comments').css('background-color', to);
-			$('.header-container').css('background-color', to);
-			$('h5.widget-title').css('background-color', to);
-			checkBgAndPostBg();
-			current.postBg = to;
-  }
-
-  function changeText ( to ) {
-			$('body').css('color', to);
-			$('h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a').css('color', to);
-			$('.separator').css('color', to);
-			$('h5.widget-title').css('color', to);
-			current.text = to;
-  }
-
-  function changeAltText ( to ) {
-    	$('.button, .button a, .search-form .search-submit').css('color', to);
-    	$('.footer-copy-container').css('color', to);
-    	current.altText = to;
-  }
-
-  function changeBrand ( to ) {
-			$('a').css('color', to);
-			$('.master-title a').css('color', to);
-			$('.button, .button a, .search-form .search-submit').css('background-color', to);
-			$('.navbar-toggle .icon-bar').css('background-color', to);
-			$('.footer-copy-container').css('background-color', to);
-
-			$('h1 a, h2 a, h3 a, h4 a, h5 a').css('color', current.text);
-    	$('.button, .button a').css('color', current.altText);
-			current.brand = to;
-  }
 
 	function checkBgAndPostBg () {
 		var $el = $('body:not(.single) .post, .single-content');
@@ -80,13 +28,10 @@
 		var postBg = $el.css('background-color');
 		var $img = $el.find('.entry-image');
 		if ( bg == postBg ) {
-			$el.css('padding', 0);
-			$img.css('margin-left', 0);
-			$img.css('margin-right', 0);
+            $('body').addClass( 'bg-no-diff' );
 		} else {
-			$el.css('padding', 20)
-			$img.css('margin-left', -20);
-			$img.css('margin-right', -20);
-		}
+            $('body').removeClass( 'bg-no-diff' );
+        }
 	}
+
 })( jQuery, wp.customize );

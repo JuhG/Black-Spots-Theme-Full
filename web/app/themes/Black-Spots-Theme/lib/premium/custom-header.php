@@ -1,35 +1,56 @@
 <?php
 
 function custom_header_more_functionality ($wp_customize) {
-	$wp_customize->add_setting( 'header_position', array(
-	    'default'        => 'static',
-		'sanitize_callback' => 'esc_html',
-	));
-	$wp_customize->add_control( 'header_position', array(
-		'label'    => __( 'Header Type', 'black_spots' ),
-		'section'  => 'header_image',
-		'settings' => 'header_position',
-		'priority' => 0,
-		'default'  => 'static',
-		'type'     => 'radio',
-		'choices'  => array(
-			'static' => __( 'Static', 'black_spots' ),
-			'Sticky' => __( 'Sticky', 'black_spots' )
-		),
-	));
+
+    /**
+     * Header Position - absulute or fixed
+     */
+    $wp_customize->add_setting( 'header_position', array(
+        'default'        => 'static',
+        'sanitize_callback' => 'esc_html',
+    ));
+    $wp_customize->add_control( 'header_position', array(
+        'label'    => __( 'Header Type', 'black-spots-theme' ),
+        'section'  => 'header_image',
+        'priority' => 0,
+        'type'     => 'radio',
+        'choices'  => array(
+            'static' => __( 'Static', 'black-spots-theme' ),
+            'Sticky' => __( 'Sticky', 'black-spots-theme' )
+        ),
+    ));
+
+    /**
+     * Parallax
+     */
+    $wp_customize->add_setting( 'bs_header_parallax', array(
+        'default'   => false,
+        'sanitize_callback' => 'esc_html',
+    ));
+    $wp_customize->add_control( 'bs_header_parallax', array(
+        'label'       => __('Parallax Header', 'black-spots-theme'),
+        'section'  => 'header_image',
+        'priority' => 0,
+        'type'        => 'checkbox',
+    ));
+
+    function bs_is_header_parallax () {
+        return get_theme_mod( 'bs_header_parallax' );
+    }
+
+    /**
+     * Parallax Fade-out
+     */
+    $wp_customize->add_setting( 'bs_header_parallax_fade', array(
+        'default'   => false,
+        'sanitize_callback' => 'esc_html',
+    ));
+    $wp_customize->add_control( 'bs_header_parallax_fade', array(
+        'label'       => __('Fade-out Header on Scroll', 'black-spots-theme'),
+        'section'  => 'header_image',
+        'priority' => 0,
+        'type'        => 'checkbox',
+        'active_callback' => 'bs_is_header_parallax'
+    ));
 }
 add_action('customize_register','custom_header_more_functionality');
-
-function header_position_add_customizer_css() {
-	$position = get_theme_mod( 'header_position' );
-	if ( $position !== 'sticky' ) return;
-	$custom_css = "
-		.header-container {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-		}";
-	wp_add_inline_style( 'sage/css', $custom_css );
-}
-add_action( 'wp_enqueue_scripts', 'header_position_add_customizer_css', 100 );

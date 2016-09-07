@@ -2,11 +2,11 @@ a {
 	@extend %clearfix;
 }
 
-textarea:hover, 
-input:hover, 
-textarea:active, 
-input:active, 
-textarea:focus, 
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
 input:focus,
 button:focus,
 button:active,
@@ -17,7 +17,7 @@ button:hover
 
 img,
 figure,
-.size-auto, 
+.size-auto,
 .size-full,
 .size-large,
 .size-medium,
@@ -83,4 +83,40 @@ $hover-opacity: .6;
 	border-right: none;
 	border-bottom: none;
 	border-left-width: 5px;
+}
+
+input[type=text], input[type=email], input[type=url],, textarea {
+    border: 1px solid #ccc;
+    &:focus {
+        outline: none;
+        border-color: #666;
+    }
+}
+
+label {
+    font-weight: 300;
+}
+
+
+// Woocommerce
+.woocommerce div.product .woocommerce-tabs .panel {
+    padding: $gap-small;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+    &:after {
+        border-color: transparent !important;
+    }
+}
+
+.woocommerce a.remove {
+    &:after {
+        border-color: transparent !important;
+    }
+}
+
+body.bg-no-diff {
+    .woocommerce div.product .woocommerce-tabs .panel {
+        padding: 0;
+    }
 }

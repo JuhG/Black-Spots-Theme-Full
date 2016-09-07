@@ -1,10 +1,10 @@
 {
-  "name": "sage",
-  "homepage": "https://roots.io/sage/",
+  "name": "black-spots-theme",
+  "homepage": "https://juhg.hu/black-spots-theme",
   "authors": [
-    "Ben Word <ben@benword.com>"
+    "JuhG <me@juhg.hu>"
   ],
-  "license": "MIT",
+  "license": "GPL",
   "private": true,
   "dependencies": {
     "bootstrap-sass": "3.3.6",

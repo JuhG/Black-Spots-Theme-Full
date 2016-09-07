@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Black Spots Theme\n"
+"POT-Creation-Date: 2016-09-05 14:52+0200\n"
+"PO-Revision-Date: 2016-09-05 14:53+0200\n"
+"Last-Translator: JuhG <me@juhg.hu>\n"
+"Language-Team: JuhG <me@juhg.hu>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: bower.json\n"
+"X-Poedit-SearchPathExcluded-1: CHANGELOG.md\n"
+"X-Poedit-SearchPathExcluded-2: composer.json\n"
+"X-Poedit-SearchPathExcluded-3: composer.lock\n"
+"X-Poedit-SearchPathExcluded-4: CONTRIBUTING.md\n"
+"X-Poedit-SearchPathExcluded-5: gulpfile.js\n"
+"X-Poedit-SearchPathExcluded-6: LICENSE.md\n"
+"X-Poedit-SearchPathExcluded-7: package.json\n"
+"X-Poedit-SearchPathExcluded-8: README.md\n"
+"X-Poedit-SearchPathExcluded-9: rtl.css\n"
+"X-Poedit-SearchPathExcluded-10: ruleset.xml\n"
+"X-Poedit-SearchPathExcluded-11: screenshot.png\n"
+
+#: 404.php:4
+msgid "Sorry, but the page you were looking for does not exist."
+msgstr ""
+
+#: base.php:14
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
+"browsehappy.com/\">upgrade your browser</a> to improve your experience."
+msgstr ""
+
+#: functions.php:43
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: index.php:7 search.php:7
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: lib/comment.php:56
+msgid "Author"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:12
+msgid "Color Scheme"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:14
+msgid ""
+"Select your color scheme or build your own selecting the colors individually"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:23
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:31
+msgid "Color scheme"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:44
+msgid "Normal Text Color"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:45
+msgid "Alternative Text Color"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:46
+msgid "Brand Color"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:47
+msgid "Background Color"
+msgstr ""
+
+#: lib/customizer/custom-color-basic.php:48
+msgid "Post Background Color"
+msgstr ""
+
+#: lib/customizer/custom-header-basic.php:27 lib/premium/custom-header.php:9
+msgid "Header Type"
+msgstr ""
+
+#: lib/customizer/custom-header-basic.php:34
+msgid "Full"
+msgstr ""
+
+#: lib/customizer/custom-header-basic.php:35
+msgid "Boxed"
+msgstr ""
+
+#: lib/editor.php:16
+msgid "Paragraph"
+msgstr ""
+
+#: lib/editor.php:17
+msgid "Heading 2"
+msgstr ""
+
+#: lib/editor.php:18
+msgid "Heading 3"
+msgstr ""
+
+#: lib/editor.php:19
+msgid "Heading 4"
+msgstr ""
+
+#: lib/editor.php:20
+msgid "Preformatted"
+msgstr ""
+
+#: lib/editor.php:34
+msgid "Cite"
+msgstr ""
+
+#: lib/editor.php:38
+msgid "Two columns"
+msgstr ""
+
+#: lib/editor.php:43
+msgid "Three columns"
+msgstr ""
+
+#: lib/editor.php:48
+msgid "Button Primary"
+msgstr ""
+
+#: lib/editor.php:53
+msgid "Button Secondary"
+msgstr ""
+
+#: lib/image.php:14
+msgid "Content Width"
+msgstr ""
+
+#: lib/image.php:15
+msgid "Full Screen"
+msgstr ""
+
+#: lib/image.php:16
+msgid "Widget Width"
+msgstr ""
+
+#: lib/load-more.php:35
+msgid "Loading"
+msgstr ""
+
+#: lib/premium/custom-color.php:14
+msgid ""
+"Reset colors on changing a scheme! If unchecked, it only changes the Default "
+"button's target color."
+msgstr ""
+
+#: lib/premium/custom-header.php:16
+msgid "Static"
+msgstr ""
+
+#: lib/premium/custom-header.php:17
+msgid "Sticky"
+msgstr ""
+
+#: lib/setup.php:23
+msgid "Primary Navigation"
+msgstr ""
+
+#: lib/setup.php:55
+msgid "Primary"
+msgstr ""
+
+#: lib/setup.php:64
+msgid "Footer 1"
+msgstr ""
+
+#: lib/setup.php:73
+msgid "Footer 2"
+msgstr ""
+
+#: lib/setup.php:82
+msgid "Footer 3"
+msgstr ""
+
+#: lib/titles.php:18
+#, php-format
+msgid ""
+"Search<div class=\"separator\"><div class=\"dashicons dashicons-arrow-right-"
+"alt2\"></div></div>%s"
+msgstr ""
+
+#: lib/titles.php:20
+msgid "Not Found"
+msgstr ""
+
+#: templates/comments.php:26
+msgid "&larr; Older comments"
+msgstr ""
+
+#: templates/comments.php:29
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: templates/comments.php:38
+msgid "Comments are closed."
+msgstr ""
+
+#: templates/content-page.php:4 templates/content-single.php:30
+msgid "Pages:"
+msgstr ""
+
+#: templates/content.php:32
+msgid "Continue"
+msgstr ""

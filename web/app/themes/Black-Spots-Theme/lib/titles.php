@@ -1,6 +1,6 @@
 <?php
 
-namespace Roots\Sage\Titles;
+namespace BlackSpots\Titles;
 
 /**
  * Page titles
@@ -15,9 +15,9 @@ function title() {
   } elseif (is_archive()) {
     return get_the_archive_title();
   } elseif (is_search()) {
-    return sprintf(__('Search<div class="separator"><div class="dashicons dashicons-arrow-right-alt2"></div></div>%s', 'black_spots'), get_search_query());
+    return sprintf(__('Search<div class="separator"><div class="dashicons dashicons-arrow-right-alt2"></div></div>%s', 'black-spots-theme'), get_search_query());
   } elseif (is_404()) {
-    return __('Not Found', 'black_spots');
+    return __('Not Found', 'black-spots-theme');
   } else {
     return get_the_title();
   }

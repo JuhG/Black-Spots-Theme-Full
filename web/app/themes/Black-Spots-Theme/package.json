@@ -1,20 +1,13 @@
 {
-  "name": "sage",
-  "version": "8.4.2",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "https://roots.io/sage/",
+  "name": "black-spots-theme",
+  "version": "0.5.0",
+  "author": "JuhG <me@juhg.hu>",
+  "homepage": "https://juhg.hu/black-spots-theme",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/roots/sage.git"
-  },
-  "bugs": {
-    "url": "https://github.com/roots/sage/issues"
-  },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
+      "type": "GPL",
+      "url": "http://www.gnu.org/licenses/gpl-2.0.html"
     }
   ],
   "scripts": {

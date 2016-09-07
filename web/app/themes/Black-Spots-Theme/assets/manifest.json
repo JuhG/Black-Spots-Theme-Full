@@ -13,9 +13,15 @@
       ],
       "main": true
     },
+    "throttle-debounce.min.js": {
+        "files": [
+          "scripts/throttle-debounce.min.js"
+        ]
+    },
     "customizer.js": {
       "files": [
-        "scripts/customizer.js"
+        "scripts/customizer.js",
+        "scripts/customizer-basic.js"
       ]
     },
     "customizer-basic.js": {

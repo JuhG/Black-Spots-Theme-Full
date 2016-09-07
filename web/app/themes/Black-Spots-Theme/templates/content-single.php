@@ -1,8 +1,12 @@
 <?php while (have_posts()) : the_post(); ?>
 
     <article <?php post_class(); ?>>
-        
-        <?php if ( false && has_post_thumbnail() ):
+
+        <?php
+        /**
+         * Post thumbnail moved to the header
+         */
+        if ( false && has_post_thumbnail() ):
             $thumb_id = get_post_thumbnail_id();
             $thumb_url = wp_get_attachment_image_src($thumb_id,'full_screen');
             ?>
@@ -27,7 +31,7 @@
             </div>
 
             <footer>
-              <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'black_spots'), 'after' => '</p></nav>']); ?>
+              <?php wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'black-spots-theme'), 'after' => '</p></nav>']); ?>
 
               <?php if (has_tag()): ?>
                 <div class="single-tags">
