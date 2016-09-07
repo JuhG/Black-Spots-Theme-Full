@@ -1,0 +1,2 @@
+!function(o,e){e.controlConstructor.select=e.Control.extend({ready:function(){"color-scheme"===this.id&&this.setting.bind("change",function(c){var t=e.instance("color-scheme-reset").get();o.each(bsColorScheme[c].colors,function(o,c){e.control(o).container.find(".color-picker-hex").data("data-default-color",c.color).wpColorPicker("defaultColor",c.color),t&&e.instance(o).set(c.color)})})}})}(jQuery,wp.customize);
+//# sourceMappingURL=customizer-controls.js.map
