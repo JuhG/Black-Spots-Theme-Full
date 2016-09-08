@@ -2,21 +2,6 @@
 
     <article <?php post_class(); ?>>
 
-        <?php
-        /**
-         * Post thumbnail moved to the header
-         */
-        if ( false && has_post_thumbnail() ):
-            $thumb_id = get_post_thumbnail_id();
-            $thumb_url = wp_get_attachment_image_src($thumb_id,'full_screen');
-            ?>
-            <div class="entry-image">
-                <a class="fluidbox" href="<?php echo $thumb_url[0]; ?>">
-                  <?php the_post_thumbnail(); ?>
-                </a>
-            </div>
-        <?php endif ?>
-
         <section class="single-content">
 
             <header>
@@ -41,6 +26,38 @@
               <?php endif ?>
 
             </footer>
+
+            <?php
+            $prev = get_previous_post();
+            $next = get_next_post();
+            if ( $prev || $next ):
+            ?>
+            <div class="single-related">
+
+                <?php if ($next): ?>
+                    <div class="single-next">
+                        <a href="<?php echo get_permalink($next) ?>">
+                            <div class="dashicons dashicons-arrow-left-alt"></div>
+                            <h4>
+                                <?php echo $next->post_title ?>
+                            </h4>
+                        </a>
+                    </div>
+                <?php endif ?>
+
+                <?php if ($prev): ?>
+                    <div class="single-prev">
+                        <a href="<?php echo get_permalink($prev) ?>">
+                            <div class="dashicons dashicons-arrow-right-alt"></div>
+                            <h4>
+                                <?php echo $prev->post_title ?>
+                            </h4>
+                        </a>
+                    </div>
+                <?php endif ?>
+
+            </div>
+            <?php endif; ?>
 
         </section>
 

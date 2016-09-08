@@ -64,19 +64,18 @@
          */
         if ( $body.is('.header-parallax') ) {
             var headerParallax = function (e) {
-                $headerImage.css({
-                    width: $headerBottom.width()
-                });
                 $headerBottom.css({
                     height: $headerImage.height()
                 });
-                headerHeight = $header.height();
                 st = document.body.scrollTop;
                 pos = st / 2;
                 posMinus = -1 * pos;
                 tr = 'translateY('+ pos +'px)';
                 trMinus = 'translateY('+ posMinus +'px)';
-                if ( $body.is('.header-parallax-fade') ) opacity = Math.max( 1 - st / headerHeight, 0 );
+                if ( $body.is('.header-parallax-fade') ) {
+                    headerHeight = $header.height();
+                    opacity = Math.max( 1 - st / headerHeight, 0 );
+                }
                 $headerImage.css({
                     transform: trMinus,
                     webkitTransform: trMinus,
@@ -95,4 +94,4 @@
         }
     });
 
-})(jQuery); // Fully reference jQuery after this point.
+})(jQuery);

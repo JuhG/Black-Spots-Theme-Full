@@ -5,22 +5,12 @@
  */
 function get_basic_color_schemes () {
 	return array(
-		'default' => array(
-            'name' => __( 'Default', 'black-spots-theme' ),
-            'colors' => array(
-    			'text'     => array( 'color' => '#000000' ),
-    			'alt-text' => array( 'color' => '#ffffff' ),
-    			'brand'    => array( 'color' => '#111111' ),
-    			'bg'       => array( 'color' => '#ffffff' ),
-    			'post-bg'  => array( 'color' => '#ffffff' )
-            )
-		),
         'gold-boxed' => array(
             'name' => __( 'Gold - Boxed', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
-                'brand'    => array( 'color' => '#B29870' ),
+                'brand'    => array( 'color' => '#ba984f' ),
                 'bg'       => array( 'color' => '#f7f7f7' ),
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
@@ -65,16 +55,6 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
         ),
-        'blue-boxed' => array(
-            'name' => __( 'Blue - Boxed', 'black-spots-theme' ),
-            'colors' => array(
-                'text'     => array( 'color' => '#000000' ),
-                'alt-text' => array( 'color' => '#ffffff' ),
-                'brand'    => array( 'color' => '#336b87' ),
-                'bg'       => array( 'color' => '#c0d4e2' ),
-                'post-bg'  => array( 'color' => '#ffffff' )
-            )
-        ),
         'teal-simple' => array(
             'name' => __( 'Teal - Simple', 'black-spots-theme' ),
             'colors' => array(
@@ -90,7 +70,7 @@ function get_basic_color_schemes () {
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
-                'brand'    => array( 'color' => '#063852' ),
+                'brand'    => array( 'color' => '#064268' ),
                 'bg'       => array( 'color' => '#ffffff' ),
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
@@ -110,7 +90,7 @@ function get_basic_color_schemes () {
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
-                'brand'    => array( 'color' => '#506d2f' ),
+                'brand'    => array( 'color' => '#4b7447' ),
                 'bg'       => array( 'color' => '#ffffff' ),
                 'post-bg'  => array( 'color' => '#ffffff' )
             )

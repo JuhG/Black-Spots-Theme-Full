@@ -32,7 +32,13 @@ function bs_mce_toolbars( $settings ) {
     $style_formats = array(
         array(
             'title'   => __( 'Cite', 'black-spots-theme' ),
-            'block'  => 'cite'
+            'block'  => 'cite',
+            'wrapper' => true,
+        ),
+        array(
+            'title'   => __( 'Hightlight', 'black-spots-theme' ),
+            'inline'   => 'span',
+            'classes' => 'highlight'
         ),
         array(
             'title'   => __( 'Two columns', 'black-spots-theme' ),
@@ -47,12 +53,14 @@ function bs_mce_toolbars( $settings ) {
         array(
             'title' => __( 'Button Primary', 'black-spots-theme' ),
             'block' => 'div',
-            'classes' => array( 'button', 'button-primary' )
+            'classes' => array( 'button', 'button-primary' ),
+            'wrapper' => true,
         ),
         array(
             'title' => __( 'Button Secondary', 'black-spots-theme' ),
             'block' => 'div',
-            'classes' => array( 'button', 'button-secondary' )
+            'classes' => array( 'button', 'button-secondary' ),
+            'wrapper' => true,
         ),
     );
 

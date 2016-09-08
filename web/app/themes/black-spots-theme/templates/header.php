@@ -68,19 +68,44 @@
 
 	</div>
 
-	<div class="header-image container">
 
-		<?php
-		/**
-		 * Custom header image
-		 */
+    <?php
+    /**
+     * Custom header image
+     */
 
-		if ( is_singular() && has_post_thumbnail() && ! is_singular('product') ): ?>
-            <?php the_post_thumbnail( 'full_screen' ); ?>
-		<?php elseif ( $img = get_header_image() ): ?>
-			<img src="<?php echo $img; ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
-		<?php endif; ?>
+    $header_img = '';
+    $header_height = '';
+    if ( is_singular() && has_post_thumbnail() && ! is_singular('product') ): ?>
+        <?php $header_img = get_the_post_thumbnail( '', 'full_screen' ); ?>
+    <?php elseif ( $header_img = get_header_image_tag() ): ?>
+        <?php if ( ! is_home() && get_theme_mod('header_only_home') ) $header_img = ''; ?>
+    <?php endif; ?>
 
-	</div>
+    <?php if ( $header_img ): ?>
+    	<div class="header-image container">
+            <?php echo $header_img; ?>
+    	</div>
+
+        <?php
+        /**
+         * Preset the height to avoid the "content jump"
+         *
+         * Since we're in the header, the scrollbar is not loaded yet
+         * That's why we need that ratio
+         */
+        ?>
+        <script>
+            (function ($) {
+                var width = $(window).width();
+                var ratio = ( width - 17 ) / width;
+                var $headerBottom = $('.header-image');
+                var $headerImage = $headerBottom.find('img');
+                $headerBottom.css({
+                    height: $headerImage.height() * ratio
+                });
+            })(jQuery);
+        </script>
+    <?php endif; ?>
 
 </header>

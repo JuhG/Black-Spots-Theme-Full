@@ -52,5 +52,19 @@ function custom_header_more_functionality ($wp_customize) {
         'type'        => 'checkbox',
         'active_callback' => 'bs_is_header_parallax'
     ));
+
+    /**
+     * Header Only Home
+     */
+    $wp_customize->add_setting( 'header_only_home', array(
+        'default'        => false,
+        'sanitize_callback' => 'esc_html',
+    ));
+    $wp_customize->add_control( 'header_only_home', array(
+        'label'    => __( 'Use this image only on the front page', 'black-spots-theme' ),
+        'section'  => 'header_image',
+        'priority' => 0,
+        'type'     => 'checkbox'
+    ));
 }
 add_action('customize_register','custom_header_more_functionality');

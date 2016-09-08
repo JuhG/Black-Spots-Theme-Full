@@ -94,9 +94,37 @@ body.single .post {
 		    margin-right: 5px;
 		}
 	}
+
 	footer {
-		margin-top: 50px;
+		margin-top: $gap-medium;
 	}
+
+    .single-related {
+        margin-top: $gap-big;
+        padding-top: $gap-tiny;
+        border-top: 1px solid #ddd;
+        overflow: hidden;
+        .single-next, .single-prev {
+            width: 45%;
+        }
+        .single-next {
+            float: left;
+        }
+        .single-prev {
+            float: right;
+            text-align: right;
+        }
+        .dashicons {
+            font-size: $gap-small;
+            height: $gap-small;
+            width: $gap-small;
+            padding: $gap-tiny 0;
+            box-sizing: content-box;
+        }
+        h4 {
+            color: inherit;
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -112,6 +140,11 @@ body.single .post {
 				}
 			}
 		}
+      .single-related {
+        .single-next, .single-prev {
+            width: 100%;
+        }
+      }
 	}
 }
 

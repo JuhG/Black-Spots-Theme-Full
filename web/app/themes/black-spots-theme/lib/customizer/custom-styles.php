@@ -62,7 +62,8 @@ function get_final_customizer_css_array () {
 			'.if-author'                                => 'background-color',
 			'blockquote'                                => 'border-color',
 			'hr'                                        => 'border-color',
-            '.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button' => 'background-color'
+            '.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button' => 'background-color',
+            '.highlight' => 'background-color:rgba:.2'
 		)
 
 	);

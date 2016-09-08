@@ -120,3 +120,11 @@ body.bg-no-diff {
         padding: 0;
     }
 }
+
+.scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}

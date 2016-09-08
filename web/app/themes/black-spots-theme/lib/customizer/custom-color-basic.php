@@ -91,18 +91,77 @@ function get_final_customizer_css ( $admin = false ) {
     $css = '';
     foreach ($css_array as $color => $styles) {
         foreach ($styles as $selector => $style) {
+
+            /**
+             * In the admin we have to override the default styles,
+             * because the inline styles are queued before them
+             */
             if ( $admin ) {
                 $css .= 'body#tinymce ';
                 if ( 'body' === trim($selector) ) $selector = '';
             }
+
             $css .= $selector .'{';
+
             foreach ( (array)$style as $stylename ) {
-                $css .= $stylename .':'. $colors[ $color ] .';';
+
+                /**
+                 * Modifiers
+                 */
+                $current_color = $colors[ $color ];
+                if ( strpos($stylename, ':') ) {
+                    $arr = explode(':', $stylename);
+                    $stylename = $arr[0];
+                    if ( 'rgba' === $arr[1] ) {
+                        $current_color = hex2rgba( $current_color, $arr[2] );
+                    }
+                }
+
+                $css .= $stylename .':'. $current_color .';';
             }
+
             $css .= '}';
         }
     }
     return $css;
+}
+
+function hex2rgba($color, $opacity = false) {
+
+    $default = 'rgb(0,0,0)';
+
+    //Return default if no color provided
+    if(empty($color))
+          return $default;
+
+    //Sanitize $color if "#" is provided
+        if ($color[0] == '#' ) {
+            $color = substr( $color, 1 );
+        }
+
+        //Check if color has 6 or 3 characters and get values
+        if (strlen($color) == 6) {
+                $hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+        } elseif ( strlen( $color ) == 3 ) {
+                $hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+        } else {
+                return $default;
+        }
+
+        //Convert hexadec to rgb
+        $rgb =  array_map('hexdec', $hex);
+
+        //Check if opacity is set(rgba or rgb)
+        if($opacity){
+            if(abs($opacity) > 1)
+                $opacity = 1.0;
+            $output = 'rgba('.implode(",",$rgb).','.$opacity.')';
+        } else {
+            $output = 'rgb('.implode(",",$rgb).')';
+        }
+
+        //Return rgb(a) color string
+        return $output;
 }
 
 if ( ! BS_PREMIUM ) {

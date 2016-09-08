@@ -52,7 +52,7 @@ var project = manifest.getProjectGlobs();
 // CLI options
 var enabled = {
   // Enable static asset revisioning when `--production`
-  rev: argv.production,
+  rev: false,
   // Disable source maps when `--production`
   maps: !argv.production,
   // Fail styles task on error when `--production`
@@ -179,16 +179,6 @@ gulp.task('styles', ['wiredep'], function() {
     .pipe(writeToManifest('styles'));
 });
 
-// CSS needed for custom color schemes
-gulp.task('customcss', ['wiredep'], function () {
-  return gulp.src('assets/customizer/color/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('dist/styles'))
-    .pipe(browserSync.stream());;
-});
-
 // ### Scripts
 // `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
 // and project JS.
@@ -257,7 +247,6 @@ gulp.task('watch', function() {
       blacklist: ['/wp-admin/**']
     }
   });
-  gulp.watch([path.source + 'customizer/**/*'], ['customcss']);
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
