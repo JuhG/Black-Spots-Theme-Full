@@ -18,6 +18,10 @@
 	padding: 0;
 }
 
+.nav>li>a:focus,.nav>li>a:hover {
+    background-color: inherit;
+}
+
 
 // Bootstrap dropdown on hover
 // NOT mobile

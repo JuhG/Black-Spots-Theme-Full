@@ -8,11 +8,13 @@ function bs_register_basic_color_scheme_customizer ( $wp_customize ) {
     /**
      * Registering the color scheme section in the customizer
      */
+    $desc = __('Select your color scheme or build your own selecting the colors individually!', 'black-spots-theme');
+    if ( ! BS_PREMIUM ) $desc = __('Select your color scheme! You can consider these as examples. In the premium version you can select all the colors individually.', 'black-spots-theme');
     $wp_customize->add_section( 'color-scheme-section', array(
         'title'       => __( 'Color Scheme', 'black-spots-theme' ),
         'priority'    => 30,
-        'description' => __('Select your color scheme or build your own selecting the colors individually', 'black-spots-theme'),
-    ) );
+        'description' => $desc,
+    ));
 
     /**
      * Color scheme changing
@@ -24,7 +26,7 @@ function bs_register_basic_color_scheme_customizer ( $wp_customize ) {
     }
     asort( $color_scheme_names );
     $wp_customize->add_setting( 'color-scheme', array(
-        'default'   => 'default',
+        'default'   => 'boxed-gold',
         'transport' => BS_PREMIUM ? 'postMessage' : 'refresh',
         'sanitize_callback' => 'esc_html',
     ));

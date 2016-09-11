@@ -89,9 +89,17 @@ body#tinymce {
     }
     .button {
         margin-right: 30px;
+        margin-bottom: 30px;
+        white-space: initial;
     }
     .highlight {
         padding: 3px 0;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+      @extend .form-control;
     }
 }
 

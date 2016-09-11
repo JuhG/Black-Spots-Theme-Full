@@ -13,7 +13,6 @@ function add_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'content_width'           => __( 'Content Width', 'black-spots-theme' ),
         'full_screen'             => __( 'Full Screen', 'black-spots-theme' ),
-        'max_widget_width'        => __( 'Widget Width', 'black-spots-theme' ),
     ));
 }
 add_filter( 'image_size_names_choose', __NAMESPACE__ . '\\add_custom_sizes' );
@@ -87,7 +86,7 @@ function get_image_id_by_url ( $url ) {
         $arr  = explode( '-', $url );
         $last = array_pop( $arr );
         $safe = implode( '-', $arr);
-        
+
         $arr  = explode( '.', $last );
         $ext  = array_pop( $arr );
 
@@ -98,7 +97,7 @@ function get_image_id_by_url ( $url ) {
 
     if ( count( $attachment ) ) $id = $attachment[0];
 
-    return $id; 
+    return $id;
 }
 
 /**

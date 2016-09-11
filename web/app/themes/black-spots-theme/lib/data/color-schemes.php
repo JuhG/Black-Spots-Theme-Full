@@ -5,18 +5,8 @@
  */
 function get_basic_color_schemes () {
 	return array(
-        'gold-boxed' => array(
-            'name' => __( 'Gold - Boxed', 'black-spots-theme' ),
-            'colors' => array(
-                'text'     => array( 'color' => '#000000' ),
-                'alt-text' => array( 'color' => '#ffffff' ),
-                'brand'    => array( 'color' => '#ba984f' ),
-                'bg'       => array( 'color' => '#f7f7f7' ),
-                'post-bg'  => array( 'color' => '#ffffff' )
-            )
-        ),
-        'blue-dark' => array(
-            'name' => __( 'Blue - Dark', 'black-spots-theme' ),
+        'dark-blue' => array(
+            'name' => __( 'Dark - Blue', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#bfe2ff' ),
                 'alt-text' => array( 'color' => '#00010d' ),
@@ -25,8 +15,8 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#23293f' )
             )
         ),
-        'gray-green-dark' => array(
-            'name' => __( 'Gray Green - Dark', 'black-spots-theme' ),
+        'dark-gray-green' => array(
+            'name' => __( 'Dark - Gray Green', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#ffffff' ),
                 'alt-text' => array( 'color' => '#000000' ),
@@ -35,8 +25,104 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#666666' )
             )
         ),
-        'black-simple' => array(
-            'name' => __( 'Black - Simple', 'black-spots-theme' ),
+
+
+
+        'boxed-gold' => array(
+            'name' => __( 'Boxed - Gold', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#ad9052' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'boxed-black' => array(
+            'name' => __( 'Boxed - Black', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#111111' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'boxed-red' => array(
+            'name' => __( 'Boxed - Red', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#eb4646' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'boxed-teal' => array(
+            'name' => __( 'Boxed - Teal', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#20948b' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'boxed-dark-blue' => array(
+            'name' => __( 'Boxed - Dark Blue', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#064268' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'boxed-light-green' => array(
+            'name' => __( 'Boxed - Light Green', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#adcf83' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'boxed-dark-green' => array(
+            'name' => __( 'Boxed - Dark Green', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#4b7447' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'boxed-orange' => array(
+            'name' => __( 'Boxed - Orange', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#f49b42' ),
+                'bg'       => array( 'color' => '#f7f7f7' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+
+
+
+        'simple-gold' => array(
+            'name' => __( 'Simple - Gold', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#ad9052' ),
+                'bg'       => array( 'color' => '#ffffff' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'simple-black' => array(
+            'name' => __( 'Simple - Black', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
@@ -45,8 +131,8 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
         ),
-        'red-simple' => array(
-            'name' => __( 'Red - Simple', 'black-spots-theme' ),
+        'simple-red' => array(
+            'name' => __( 'Simple - Red', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
@@ -55,8 +141,8 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
         ),
-        'teal-simple' => array(
-            'name' => __( 'Teal - Simple', 'black-spots-theme' ),
+        'simple-teal' => array(
+            'name' => __( 'Simple - Teal', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
@@ -65,8 +151,8 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
         ),
-        'blue-dark-simple' => array(
-            'name' => __( 'Blue Dark - Simple', 'black-spots-theme' ),
+        'simple-dark-blue' => array(
+            'name' => __( 'Simple - Dark Blue', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
@@ -75,8 +161,8 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
         ),
-        'green-light-simple' => array(
-            'name' => __( 'Green Light - Simple', 'black-spots-theme' ),
+        'simple-light-green' => array(
+            'name' => __( 'Simple - Light Green', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
@@ -85,12 +171,22 @@ function get_basic_color_schemes () {
                 'post-bg'  => array( 'color' => '#ffffff' )
             )
         ),
-        'green-dark-simple' => array(
-            'name' => __( 'Green Dark - Simple', 'black-spots-theme' ),
+        'simple-dark-green' => array(
+            'name' => __( 'Simple - Dark Green', 'black-spots-theme' ),
             'colors' => array(
                 'text'     => array( 'color' => '#000000' ),
                 'alt-text' => array( 'color' => '#ffffff' ),
                 'brand'    => array( 'color' => '#4b7447' ),
+                'bg'       => array( 'color' => '#ffffff' ),
+                'post-bg'  => array( 'color' => '#ffffff' )
+            )
+        ),
+        'simple-orange' => array(
+            'name' => __( 'Simple - Orange', 'black-spots-theme' ),
+            'colors' => array(
+                'text'     => array( 'color' => '#000000' ),
+                'alt-text' => array( 'color' => '#ffffff' ),
+                'brand'    => array( 'color' => '#f49b42' ),
                 'bg'       => array( 'color' => '#ffffff' ),
                 'post-bg'  => array( 'color' => '#ffffff' )
             )

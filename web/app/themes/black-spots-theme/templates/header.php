@@ -90,19 +90,19 @@
         <?php
         /**
          * Preset the height to avoid the "content jump"
-         *
-         * Since we're in the header, the scrollbar is not loaded yet
-         * That's why we need that ratio
          */
         ?>
         <script>
             (function ($) {
-                var width = $(window).width();
-                var ratio = ( width - 17 ) / width;
                 var $headerBottom = $('.header-image');
                 var $headerImage = $headerBottom.find('img');
                 $headerBottom.css({
-                    height: $headerImage.height() * ratio
+                    height: $headerImage.height()
+                });
+                $headerImage.on('load', function () {
+                    $headerBottom.css({
+                        height: $headerImage.height()
+                    });
                 });
             })(jQuery);
         </script>

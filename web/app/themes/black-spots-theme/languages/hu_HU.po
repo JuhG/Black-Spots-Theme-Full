@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Black Spots Theme 0.6.0\n"
-"POT-Creation-Date: 2016-09-11 15:15+0200\n"
-"PO-Revision-Date: 2016-09-11 15:16+0200\n"
+"POT-Creation-Date: 2016-09-11 15:16+0200\n"
+"PO-Revision-Date: 2016-09-11 15:21+0200\n"
 "Last-Translator: JuhG <me@juhg.hu>\n"
 "Language-Team: JuhG <blackspots@juhg.hu>\n"
-"Language: en_US\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,305 +20,350 @@ msgid ""
 "You are using an <strong>outdated</strong> browser. Please <a href=\"http://"
 "browsehappy.com/\">upgrade your browser</a> to improve your experience."
 msgstr ""
+"<strong>Elavult</strong> böngészőt használ. Kérjük, <a href=\"http://"
+"browsehappy.com/\">frissítse böngészőjét</a> a felhasználói élmény javítása "
+"érdekében."
 
 #: functions.php:41
 #, php-format
 msgid "Error locating %s for inclusion"
-msgstr ""
+msgstr "Hiba, nem található: %s"
 
 #: lib/comment.php:56
 msgid "Author"
-msgstr ""
+msgstr "Szerző"
 
 #: lib/customizer/custom-color-basic.php:11
 msgid ""
 "Select your color scheme or build your own selecting the colors individually!"
 msgstr ""
+"Válassz ki egy színösszeállítást vagy készítsd el a sajátod, külön-külön "
+"megadva a színeket!"
 
 #: lib/customizer/custom-color-basic.php:12
 msgid ""
 "Select your color scheme! You can consider these as examples. In the premium "
 "version you can select all the colors individually."
 msgstr ""
+"Válassz ki egy színösszeállítást! Tekintsd ezeket példáknak. A prémium "
+"változatban megadhatod a színeket külön-külön."
 
 #: lib/customizer/custom-color-basic.php:14
 msgid "Color Scheme"
-msgstr ""
+msgstr "Színösszeállítás"
 
 #: lib/customizer/custom-color-basic.php:34
 msgid "Color scheme"
-msgstr ""
+msgstr "Színösszeállítás"
 
 #: lib/customizer/custom-color-basic.php:47
 msgid "Normal Text Color"
-msgstr ""
+msgstr "Normális szövegszín"
 
 #: lib/customizer/custom-color-basic.php:48
 msgid "Alternative Text Color"
-msgstr ""
+msgstr "Alternatív szövegszín"
 
 #: lib/customizer/custom-color-basic.php:49
 msgid "Link Color"
-msgstr ""
+msgstr "Link színe"
 
 #: lib/customizer/custom-color-basic.php:50
 msgid "Background Color"
-msgstr ""
+msgstr "Háttérszín"
 
 #: lib/customizer/custom-color-basic.php:51
 msgid "Content Background Color"
-msgstr ""
+msgstr "Tartalom háttérszíne"
 
 #: lib/customizer/custom-header-basic.php:27 lib/premium/custom-header.php:13
 msgid "Header Type"
-msgstr ""
+msgstr "Header típusa"
 
 #: lib/customizer/custom-header-basic.php:32
 msgid "Full"
-msgstr ""
+msgstr "Széles"
 
 #: lib/customizer/custom-header-basic.php:33
 msgid "Boxed"
-msgstr ""
+msgstr "Keskeny"
 
 #: lib/customizer/custom-text.php:12
 msgid "Text"
-msgstr ""
+msgstr "Szöveg"
 
 #: lib/customizer/custom-text.php:21 templates/content.php:33
 msgid "Continue"
-msgstr ""
+msgstr "Tovább"
 
 #: lib/customizer/custom-text.php:25
 msgid "Read more Text"
-msgstr ""
+msgstr "\"Olvasd tovább\" szöveg"
 
 #: lib/customizer/custom-text.php:34
 msgid "Change or remove this in the Customizer - Text section"
-msgstr ""
+msgstr "Változtasd meg vagy töröld ki: Testreszabás - Szöveg menü"
 
 #: lib/customizer/custom-text.php:38
 msgid "Footer Text"
-msgstr ""
+msgstr "Footer szöveg"
 
 #: lib/data/color-schemes.php:9
 msgid "Dark - Blue"
-msgstr ""
+msgstr "Sötét - Kék"
 
 #: lib/data/color-schemes.php:19
 msgid "Dark - Gray Green"
-msgstr ""
+msgstr "Sötét - Szürke-zöld"
 
 #: lib/data/color-schemes.php:32
 msgid "Boxed - Gold"
-msgstr ""
+msgstr "Keretes - Arany"
 
 #: lib/data/color-schemes.php:42
 msgid "Boxed - Black"
-msgstr ""
+msgstr "Keretes - Fekete"
 
 #: lib/data/color-schemes.php:52
 msgid "Boxed - Red"
-msgstr ""
+msgstr "Keretes - Piros"
 
 #: lib/data/color-schemes.php:62
 msgid "Boxed - Teal"
-msgstr ""
+msgstr "Keretes - Kékeszöld"
 
 #: lib/data/color-schemes.php:72
 msgid "Boxed - Dark Blue"
-msgstr ""
+msgstr "Keretes - Sötétkék"
 
 #: lib/data/color-schemes.php:82
 msgid "Boxed - Light Green"
-msgstr ""
+msgstr "Keretes - Világoszöld"
 
 #: lib/data/color-schemes.php:92
 msgid "Boxed - Dark Green"
-msgstr ""
+msgstr "Keretes - Sötétzöld"
 
 #: lib/data/color-schemes.php:102
 msgid "Boxed - Orange"
-msgstr ""
+msgstr "Keretes - Narancssárga"
 
 #: lib/data/color-schemes.php:115
 msgid "Simple - Gold"
-msgstr ""
+msgstr "Egyszerű - Arany"
 
 #: lib/data/color-schemes.php:125
 msgid "Simple - Black"
-msgstr ""
+msgstr "Egyszerű - Fekete"
 
 #: lib/data/color-schemes.php:135
 msgid "Simple - Red"
-msgstr ""
+msgstr "Egyszerű - Piros"
 
 #: lib/data/color-schemes.php:145
 msgid "Simple - Teal"
-msgstr ""
+msgstr "Egyszerű - Kékeszöld"
 
 #: lib/data/color-schemes.php:155
 msgid "Simple - Dark Blue"
-msgstr ""
+msgstr "Egyszerű - Sötétkék"
 
 #: lib/data/color-schemes.php:165
 msgid "Simple - Light Green"
-msgstr ""
+msgstr "Egyszerű - Világoszöld"
 
 #: lib/data/color-schemes.php:175
 msgid "Simple - Dark Green"
-msgstr ""
+msgstr "Egyszerű - Sötétzöld"
 
 #: lib/data/color-schemes.php:185
 msgid "Simple - Orange"
-msgstr ""
+msgstr "Egyszerű - Narancssárga"
 
 #: lib/editor.php:16
 msgid "Paragraph"
-msgstr ""
+msgstr "Bekezdés"
 
 #: lib/editor.php:17
 msgid "Heading 2"
-msgstr ""
+msgstr "Címsor 2"
 
 #: lib/editor.php:18
 msgid "Heading 3"
-msgstr ""
+msgstr "Címsor 3"
 
 #: lib/editor.php:19
 msgid "Heading 4"
-msgstr ""
+msgstr "Címsor 4"
 
 #: lib/editor.php:20
 msgid "Preformatted"
-msgstr ""
+msgstr "Kód"
 
 #: lib/editor.php:34
 msgid "Cite"
-msgstr ""
+msgstr "Idézet"
 
 #: lib/editor.php:39
 msgid "Hightlight"
-msgstr ""
+msgstr "Kiemelés"
 
 #: lib/editor.php:44
 msgid "Two columns"
-msgstr ""
+msgstr "Két oszlop"
 
 #: lib/editor.php:49
 msgid "Three columns"
-msgstr ""
+msgstr "Három oszlop"
 
 #: lib/editor.php:54
 msgid "Button Primary"
-msgstr ""
+msgstr "Gomb - elsődleges"
 
 #: lib/editor.php:60
 msgid "Button Secondary"
-msgstr ""
+msgstr "Gomb - másodlagos"
 
 #: lib/image.php:14
 msgid "Content Width"
-msgstr ""
+msgstr "Tartalom szélessége"
 
 #: lib/image.php:15
 msgid "Full Screen"
-msgstr ""
+msgstr "Teljes képernyő"
 
 #: lib/load-more.php:35
 msgid "Loading"
-msgstr ""
+msgstr "Töltés"
 
 #: lib/premium/custom-color.php:14
 msgid ""
 "Reset colors on changing a scheme! If unchecked, it only changes the Default "
 "button's target color."
 msgstr ""
+"Ha be van pipálva, a színeket automatikusan az aktív összeállításhoz állítja."
 
 #: lib/premium/custom-header.php:18
 msgid "Static"
-msgstr ""
+msgstr "Statikus"
 
 #: lib/premium/custom-header.php:19
 msgid "Sticky"
-msgstr ""
+msgstr "Mozgó"
 
 #: lib/premium/custom-header.php:31
 msgid "Parallax Header"
-msgstr ""
+msgstr "Parallax Header"
 
 #: lib/premium/custom-header.php:49
 msgid "Fade-out Header on Scroll"
-msgstr ""
+msgstr "Header lassan eltűnik, ahogy görgetsz"
 
 #: lib/premium/custom-header.php:64
 msgid "Use this image only on the front page"
-msgstr ""
+msgstr "Csak a kezdőoldalon használja ezt a képet"
 
 #: lib/premium/custom-sidebar.php:12
 msgid "Sidebar"
-msgstr ""
+msgstr "Oldalsáv"
 
 #: lib/premium/custom-sidebar.php:24
 msgid "Sidebar on the Left"
-msgstr ""
+msgstr "Oldalsáv bal oldalon"
 
 #: lib/premium/custom-sidebar.php:37
 msgid "No Sidebar on the Homepage"
-msgstr ""
+msgstr "Kezdőoldalon ne legyen oldalsáv"
 
 #: lib/premium/custom-sidebar.php:50
 msgid "Sidebar only on the Homepage"
-msgstr ""
+msgstr "Oldalsáv csak a kezdőoldalon legyen"
 
 #: lib/setup.php:27
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Elsődleges navigáció"
 
 #: lib/setup.php:57
 msgid "Primary"
-msgstr ""
+msgstr "Elsődleges"
 
 #: lib/setup.php:66
 msgid "Alternative"
-msgstr ""
+msgstr "Alternatív"
 
 #: lib/setup.php:75
 msgid "Footer Left"
-msgstr ""
+msgstr "Footer bal oldala"
 
 #: lib/setup.php:84
 msgid "Footer Middle"
-msgstr ""
+msgstr "Footer közepe"
 
 #: lib/setup.php:93
 msgid "Footer Right"
-msgstr ""
+msgstr "Footer jobb oldala"
 
 #: lib/titles.php:18
 msgid "Search"
-msgstr ""
+msgstr "Keresés"
 
 #: lib/titles.php:20
 msgid "Not Found"
-msgstr ""
+msgstr "Nem található"
 
 #: templates/comments.php:25
 msgid "Older comments"
-msgstr ""
+msgstr "Régebbi hozzászólások"
 
 #: templates/comments.php:28
 msgid "Newer comments"
-msgstr ""
+msgstr "Újabb hozzászólások"
 
 #: templates/comments.php:37
 msgid "Comments are closed."
-msgstr ""
+msgstr "Hozzászólások lezárva."
 
 #: templates/content-single-page.php:10 templates/content-single.php:19
 msgid "Pages:"
-msgstr ""
+msgstr "OIdalak:"
 
 #: templates/not-found.php:2
 msgid "Sorry, no results were found."
-msgstr ""
+msgstr "Bocsi, nincs találat."
+
+#~ msgid ""
+#~ "Select your color scheme or build your own selecting the colors "
+#~ "individually"
+#~ msgstr ""
+#~ "Válassz ki egy színösszeállítást vagy készítsd el a sajátod, külön-külön "
+#~ "megadva a színeket"
+
+#~ msgid "Gold - Boxed"
+#~ msgstr "Arany - keretes"
+
+#~ msgid "Blue - Dark"
+#~ msgstr "Kék - sötét"
+
+#~ msgid "Gray Green - Dark"
+#~ msgstr "Szürke, zöld - sötét"
+
+#~ msgid "Black - Simple"
+#~ msgstr "Fekete - egyszerű"
+
+#~ msgid "Red - Simple"
+#~ msgstr "Piros - egyszerű"
+
+#~ msgid "Teal - Simple"
+#~ msgstr "Kékeszöld - egyszerű"
+
+#~ msgid "Blue Dark - Simple"
+#~ msgstr "Sötétkék - egyszerű"
+
+#~ msgid "Green Light - Simple"
+#~ msgstr "Világoszöld - egyszerű"
+
+#~ msgid "Green Dark - Simple"
+#~ msgstr "Sötétzöld - egyszerű"
+
+#~ msgid "&larr; Older comments"
+#~ msgstr "&larr; Older comments"
