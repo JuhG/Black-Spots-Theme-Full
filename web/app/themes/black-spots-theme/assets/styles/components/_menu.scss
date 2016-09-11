@@ -21,6 +21,9 @@
 .nav>li>a:focus,.nav>li>a:hover {
     background-color: inherit;
 }
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    background-color: inherit;
+}
 
 
 // Bootstrap dropdown on hover
@@ -42,6 +45,10 @@
 	.sidebar-nav {
 	    padding: 9px 0;
 	}
+
+    .dropdown-menu {
+        right: 0;
+    }
 
 	.dropdown-menu .sub-menu {
 	    left: 100%;

@@ -99,7 +99,9 @@ body#tinymce {
     input[type="email"],
     input[type="url"],
     textarea {
-      @extend .form-control;
+        @extend .form-control;
+        font-weight: 300 !important;
+        letter-spacing: 1px;
     }
 }
 

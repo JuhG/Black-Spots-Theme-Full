@@ -72,6 +72,11 @@
                 posMinus = -1 * pos;
                 tr = 'translateY('+ pos +'px)';
                 trMinus = 'translateY('+ posMinus +'px)';
+                if ( $body.is('.header-boxed') ) {
+                    $headerImage.css({
+                        width: $headerBottom.width()
+                    });
+                }
                 if ( $body.is('.header-parallax-fade') ) {
                     headerHeight = $header.height();
                     opacity = Math.max( 1 - st / headerHeight, 0 );

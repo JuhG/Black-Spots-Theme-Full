@@ -52,15 +52,13 @@ function bs_mce_toolbars( $settings ) {
         ),
         array(
             'title' => __( 'Button Primary', 'black-spots-theme' ),
-            'inline' => 'div',
+            'block' => 'div',
             'classes' => array( 'button', 'button-primary' ),
-            'wrapper' => true,
         ),
         array(
             'title' => __( 'Button Secondary', 'black-spots-theme' ),
-            'inline' => 'div',
+            'block' => 'div',
             'classes' => array( 'button', 'button-secondary' ),
-            'wrapper' => true,
         ),
     );
 

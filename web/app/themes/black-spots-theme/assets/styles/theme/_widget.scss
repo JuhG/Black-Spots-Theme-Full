@@ -97,3 +97,9 @@
 .mc4wp-error {
 	@extend .alert-danger;
 }
+.mc4wp-checkbox {
+    clear: both;
+    span {
+        margin-left: 10px;
+    }
+}
