@@ -51,7 +51,7 @@ function get_color_scheme_colors () {
         'post-bg'  => array( 'name' => __( 'Content Background Color', 'black-spots-theme' ) )
     );
     $colors = get_basic_color_schemes();
-    $color_scheme = strtolower(get_theme_mod( 'color-scheme', 'default' ));
+    $color_scheme = strtolower(get_theme_mod( 'color-scheme', 'boxed-gold' ));
     $result = array();
     foreach ($names as $name => $value) {
         $result[ $name ] = array_merge( $names[ $name ], $colors[ $color_scheme ][ 'colors' ][ $name ]);

@@ -23,7 +23,7 @@
 a, .button {
 	position: static;
 	display: inline-block;
-	transition: all ease .4s;
+	transition: opacity ease .4s;
 	&:not(.image-inside) {
 		&:hover,
 		&:focus,
@@ -36,7 +36,7 @@ a, .button {
 .button {
 	text-transform: uppercase;
 	border-radius: 2px;
-	transition: all ease .4s;
+	transition: opacity ease .4s;
 	font-family: $font-family-sans-serif;
 	border: none;
 }

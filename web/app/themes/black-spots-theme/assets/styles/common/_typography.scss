@@ -44,7 +44,7 @@ h5.widget-title {
 }
 .master-title {
 	font-weight: 300;
-	transition: all ease .4s;
+	transition: opacity ease .4s;
 	&:hover {
 		opacity: $hover-opacity;
 	}
