@@ -3,7 +3,7 @@
 /**
  * Theme constants
  */
-define( 'BS_VERSION', '0.6.0' );
+define( 'BS_VERSION', '0.6.1' );
 define( 'BS_PREMIUM', true );
 
 $theme_includes = [
