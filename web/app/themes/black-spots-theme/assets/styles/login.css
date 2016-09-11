@@ -1,0 +1,9 @@
+.login #login h1 a {
+    display: block;
+    background-image: url(../images/login.jpg);
+    background-size: 320px 140px;
+    width: auto;
+    height: 140px;
+    padding: 0;
+    margin: 0;
+}

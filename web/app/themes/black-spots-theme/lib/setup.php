@@ -159,3 +159,11 @@ function assets() {
     wp_enqueue_script('bs/js', Assets\asset_path('scripts/main.js'), ['jquery'], BS_VERSION, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 98);
+
+/**
+ * Adds additional styles to the login screen.
+ */
+function bs_login() {
+    wp_enqueue_style( 'bs/login', Assets\asset_path('styles/login.css'), array(), BS_VERSION );
+}
+add_action( 'login_enqueue_scripts', __NAMESPACE__ . '\\bs_login' );

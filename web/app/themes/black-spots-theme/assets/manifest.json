@@ -13,6 +13,11 @@
       ],
       "main": true
     },
+    "login.css": {
+      "files": [
+        "styles/login.css"
+      ]
+    },
     "throttle-debounce.min.js": {
         "files": [
           "scripts/throttle-debounce.min.js"
